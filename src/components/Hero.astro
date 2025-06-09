@@ -1,0 +1,76 @@
+---
+import LogoCarousel from "../components/LogoCarousel.jsx";
+import HeroScrollWords from "../components/HeroScrollWords.jsx";
+
+// Arreglo de rutas de logos para esta unidad
+const logosempresas = [
+  "/Homepage/01_Banorte.png",
+  "/Homepage/02_Invex.png",
+   "/Homepage/03_Nissan.png",
+    "/Homepage/04_Afirme.png",
+     "/Homepage/05_Kubo.png",
+      "/Homepage/06_Prosa.png",
+       "/Homepage/07_CajaMorelia.png",
+        "/Homepage/08_Bankaool.png",
+         "/Homepage/09_Fincomun.png",
+          "/Homepage/10_BancoDonde.png",
+           "/Homepage/11_Covalto.png",
+            "/Homepage/12_CoopDesarrollo.png",
+];
+const carouselTitle = "Empresas que confían en nosotros";
+---
+<section class="bg-[#FAFAFA] py-24 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- H1 separado del efecto -->
+ <h1 class="text-4xl md:text-6xl font-light leading-tight text-gray-900">
+  Impulsa tu negocio </br>con tecnología que&nbsp;
+  <span class=" font-medium">
+    <HeroScrollWords client:only="react" />
+  </span>
+</h1>
+
+
+    
+    <p class="mt-6 text-lg md:text-xl text-black">
+      Soluciones en cifrado de datos, HSMs, ciberseguridad, </br> cumplimiento, 
+      conexión financiera y servicios en la nube.
+    </p>
+
+    <a
+      href="/contacto"
+      class="mt-8 inline-block bg-white text-black font-medium px-8 py-3 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300"
+    >
+      Hablemos
+    </a>
+
+    <div class="mt-12">
+      <div class="max-w-6xl mx-auto">
+        <LogoCarousel logos={logosempresas} title={carouselTitle} client:only="react" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const target = document.querySelector(".scroll-text");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          target.classList.add("scroll-activated");
+        } else {
+          target.classList.remove("scroll-activated");
+        }
+      },
+      {
+        root: null,
+        threshold: 0.2,
+      }
+    );
+
+    if (target) {
+      observer.observe(target);
+    }
+  });
+</script>

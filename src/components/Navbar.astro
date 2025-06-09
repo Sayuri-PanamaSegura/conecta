@@ -1,0 +1,171 @@
+<!-- NAVBAR -->
+<nav
+  id="navbar"
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-white/40 backdrop-blur-md border border-white/30 rounded-full shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300"
+>
+  <!-- Logo -->
+  <a href="/" class="flex items-center space-x-2">
+    <img
+      id="navbar-logo"
+      src="/conecta.png"
+      alt="Logo Conecta"
+      class="h-8 w-auto transition-all duration-300"
+    />
+  </a>
+
+  <!-- Nav Links -->
+  <div class="hidden md:flex space-x-6 text-sm font-medium text-black relative">
+    <a href="#nosotros" class="nav-link hover:text-gray-300 transition">NOSOTROS</a>
+
+    <!-- Submenú -->
+    <div class="relative group">
+      <a href="#servicios" class="nav-link hover:text-gray-300 transition">SOLUCIONES</a>
+      <div class="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200 z-50">
+        <a href="/unidades/conecta-cripto" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Conecta Cripto</a>
+        <a href="/unidades/tesseract" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Tesseract</a>
+        <a href="/unidades/hermes" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Hermes</a>
+        <a href="/unidades/google-cloud" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Google Cloud</a>
+      </div>
+    </div>
+
+    <a href="/servicioalcliete" class="nav-link hover:text-purple-600 transition">Soporte</a>
+    <a href="/blog" class="nav-link hover:text-purple-600 transition">Blog</a>
+  </div>
+
+<a
+  href="/contacto"
+  class="relative inline-block px-6 py-2 font-medium text-white group hidden md:inline-block shadow-md rounded-full"
+>
+  <!-- Cortina animada gris muy clarita -->
+  <span class="absolute inset-0 w-full h-full bg-[#F0F0F0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full z-0"></span>
+
+  <!-- Texto -->
+  <span class="relative z-10 text-gray-800 px-6 py-2 block transition-colors duration-300">
+    Contacto
+  </span>
+</a>
+
+
+  <!-- Botón hamburguesa (solo móvil) -->
+  <button
+    id="hamburger-btn"
+    class="text-black text-2xl p-2 rounded-full border border-black hover:bg-purple-100 transition duration-300 z-50 md:hidden"
+  >
+    ☰
+  </button>
+</nav>
+
+<!-- OVERLAY (solo móvil) -->
+<div
+  id="overlay"
+  class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500 z-40 md:hidden"
+></div>
+
+<!-- SIDEBAR (solo móvil) -->
+<div
+  id="sidebar"
+  class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl translate-x-full opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-50 border-l border-purple-200 md:hidden"
+>
+  <div class="bg-gradient-to-br from-[#F5E6FA] via-[#FAF0FC] to-white py-20 px-6 p-6 space-y-4">
+    <button id="close-sidebar" class="text-right w-full text-purple-700 text-2xl">&times;</button>
+    <a href="#nosotros" class="block text-gray-700 hover:text-gray-300">Nosotros</a>
+    <a href="#servicios" class="block text-gray-700 hover:text-purple-600">Servicios</a>
+    <a href="/servicio-Tecnico" class="block text-gray-700 hover:text-purple-600">Servicio Técnico</a>
+    <a href="/blog" class="block text-gray-700 hover:text-gray-300">Blog</a>
+    <a href="/contacto" class="block text-white font-semibold hover:text-gray-300">Contacto</a>
+  </div>
+</div>
+
+<!-- Compensación del navbar -->
+<div class="h-20"></div>
+
+<!-- SCRIPTS -->
+<script>
+  // Reducir tamaño del navbar en scroll
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+    const logo = document.getElementById("navbar-logo");
+
+    if (window.scrollY > 50) {
+  navbar.classList.add("py-1");
+  navbar.classList.remove("py-3");
+  logo.classList.add("h-6");
+  logo.classList.remove("h-8");
+} else {
+  navbar.classList.add("py-3");
+  navbar.classList.remove("py-1");
+  logo.classList.add("h-8");
+  logo.classList.remove("h-6");
+}
+
+  });
+
+  // Scrollspy
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = "#" + section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+       link.classList.remove("text-black", "border-b-2", "border-black");
+if (link.getAttribute("href") === current) {
+  link.classList.add("text-black", "border-b-2", "border-black");
+}
+
+      });
+    });
+  });
+
+  // Sidebar y overlay
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("close-sidebar");
+    const overlay = document.getElementById("overlay");
+
+    function openSidebar() {
+      sidebar.classList.remove("translate-x-full", "opacity-0", "pointer-events-none");
+      sidebar.classList.add("translate-x-0", "opacity-100", "pointer-events-auto");
+
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100", "pointer-events-auto");
+
+      hamburgerBtn.textContent = "✕";
+    }
+
+    function closeSidebarFunc() {
+      sidebar.classList.remove("translate-x-0", "opacity-100", "pointer-events-auto");
+      sidebar.classList.add("translate-x-full", "opacity-0", "pointer-events-none");
+
+      overlay.classList.remove("opacity-100", "pointer-events-auto");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+
+      hamburgerBtn.textContent = "☰";
+    }
+
+    hamburgerBtn.addEventListener("click", () => {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      isOpen ? closeSidebarFunc() : openSidebar();
+    });
+
+    closeSidebar.addEventListener("click", closeSidebarFunc);
+    overlay.addEventListener("click", closeSidebarFunc);
+
+    // Cerrar también si se da clic fuera del sidebar
+    document.addEventListener("click", (e) => {
+      const isClickInside =
+        sidebar.contains(e.target) || hamburgerBtn.contains(e.target);
+      if (!isClickInside && sidebar.classList.contains("translate-x-0")) {
+        closeSidebarFunc();
+      }
+    });
+  });
+</script>

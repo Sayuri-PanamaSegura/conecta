@@ -1,0 +1,299 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import LandingUnidad from '../../components/LandingUnidad.astro'
+import LogoCarousel from '../../components/LogoCarousel.jsx'; // Asegúrate de importarlo
+
+const logosempresas = [
+"/Tesseract/01_CajaMorelia.png",
+"/Tesseract/02_Aspel.png",
+"/Tesseract/03_CajaSMG.png",
+"/Tesseract/04_Fincomun.png",
+"/Tesseract/05_BancoDonde.png",
+"/Tesseract/06_UpSiVale.png",
+];
+const carouselTitle = "Empresas que confian en nosotros";
+---
+
+<Layout>
+   
+<LandingUnidad
+  imagenHero="/Tesseract/tese.png"
+  colorFrase="#c5fd83"
+  textoBoton="Hablemos"
+  colorBoton="white"
+   fraseSecundaria="Criptografía avanzada y autenticación."
+  tituloTarjetas="Beneficios que hacen la diferencia:"
+  fraseHero={[
+    { text: "Protegemos" },
+    { text: " cada dato \ncon tecnología de" },
+    { text: " vanguardia" }
+  ]}
+  tarjetas={[
+    {
+      imagen: "/Conecta/protege.png",
+      frase: [
+        { text: "Infraestructura alojada \nen México facilitando el \ncumplimiento con normativas \nde residencia de datos y auditorías regulatorias locales." }
+      ]
+    },
+    {
+      imagen: "/Conecta/asegura.png",
+        frase: [
+        { text: "Elimina la inversión en \nhardware y \nmantenimiento \nespecializado." }
+      ]
+    },
+    {
+      imagen: "/Conecta/mitiga.png",
+      frase: [
+        { text: "Cumplimiento \nregulatorio desde el \nprimer día." }
+      ]
+    },{
+      imagen: "/Conecta/evita.png",
+       frase: [
+        { text: "Menor carga operativa para \nequipos de TI y ciberseguridad." }
+      ]
+    },
+    {
+      imagen: "/Conecta/reputacion.png",
+     frase: [
+        { text: "Flexibilidad de integración \ncon aplicaciones, APIs y \nservicios existentes." }
+      ]
+    },{
+      imagen: "/Conecta/evita.png",
+       frase: [
+        { text: "Seguridad avanzada sin \ncomprometer la \nvelocidad de despliegue." }
+      ]
+    },
+    {
+      imagen: "/Conecta/evita.png",
+       frase: [
+        { text: "Modelo de consumo escalable \nbasado en demanda real y \nparticiones utilizadas." }
+      ]
+    },{
+      imagen: "/Conecta/evita.png",
+       frase: [
+        { text: "Mantenimiento \nsimplificado." }
+      ]
+    }
+  ]}
+>
+ 
+  <div slot="carrusel" class="mt-12">
+      <div class="max-w-6xl mx-auto">
+        <LogoCarousel logos={logosempresas} title={carouselTitle} client:only="react" />
+      </div>
+  </div>
+</LandingUnidad>
+<section class="bg-white px-6 py-24 md:px-15">
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Texto general -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h2 class="text-3xl md:text-4xl font-medium text-black text-center">
+        Servicios diseñados para <br>transformar tu operación
+      </h2>
+    </div>
+  </div>
+
+  <!-- Línea con círculos centrados respecto a pantalla -->
+  <div class="relative w-full mb-12">
+    <!-- Línea negra a todo lo ancho -->
+    <div class="absolute top-1/2 left-0 right-0 h-[2px] bg-black -translate-y-1/2 z-0"></div>
+
+    <!-- Círculos centrados -->
+    <div class="relative z-10 flex justify-between items-center max-w-3xl mx-auto px-6 md:px-0">
+        <div class="w-10 h-10 rounded-full" style="background-color: #c5fd83;"></div>
+      <div class="w-10 h-10 rounded-full" style="background-color: #c5fd83;"></div>
+      <div class="w-10 h-10 rounded-full" style="background-color: #c5fd83;"></div>
+    </div>
+  </div>
+
+  <!-- Lista de servicios -->
+  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-black text-center font-medium text-xl">
+    <div>Soft-token</div>
+    <div>Monitor HSM</div>
+    <div>Key Manager</div>
+  </div>
+</section>
+
+<section class="bg-white  px-6 py-24 md:px-12">
+  <div class="max-w-5xl mx-auto text-start mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">
+      Innovación aplicada </br> en distintos escenarios
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+    
+    <!-- Tarjeta 1 -->
+   <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/fimar_electronica_spei.png"
+      alt="Firma SPEI"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="text-base font-medium mb-1">Firma electrónica SPEI</p>
+     </div>
+
+     <!-- Tarjeta 2 -->
+    <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class=" bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/documentos.png"
+      alt="Firmado de codigo"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Firmado de código, certificados y documentos legales</p>
+     </div>
+
+    <!-- Tarjeta 3 -->
+<div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/valida.png"
+      alt="validacion"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+  <p class="font-medium">Firma y validación de transacciones electrónicas en entornos financieros.</p>
+</div>
+
+
+    <!-- Tarjeta 4 -->
+    <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/autentica.png"
+      alt="Tecnología"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-meidum mb-1">Soporte para autenticación robusta y autorización en aplicaciones distribuidas.</p>
+     </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class=" bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/banca_en.png"
+      alt="Banca en linea"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Banca en Línea y Aplicaciones Financieras.</p>
+     </div>
+
+    <!-- Tarjeta 6 -->
+   <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/sistema.png"
+      alt="ServiciO Empresarial"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Servicios Empresariales</p>
+    </div>
+
+    <!-- Tarjeta 7 -->
+   <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/servicios.png"
+      alt="Gubernamentales"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Servicios Gubernamentales</p>
+      </div>
+    <!-- Tarjeta 8 -->
+   <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/ecommerce.png"
+      alt="comercio electronico"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Comercio Electrónico</p>
+     </div>
+ <!-- Tarjeta 9 -->
+    <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/servicios_n.png"
+      alt="servicios en la nube"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Servicios en la Nube.</p>
+     </div>
+      <!-- Tarjeta 10 -->
+    <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/infraestructura.png"
+      alt="Gestion de I"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Gestión de Infraestructura Financiera. </p>
+     </div>
+        <!-- Tarjeta 12 -->
+   <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/optimizaci.png"
+      alt="Tecnología"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Optimización de Recursos.</p>
+     </div>
+        <!-- Tarjeta 13 -->
+     <div class="border border-gray-300 rounded-xl p-6 text-left flex flex-col items-start">
+  <div class="bg-[#c5fd83] p-3 rounded-full mb-3">
+    <img
+      src="/Tesseract/auditor.png"
+      alt="Tecnología"
+      class="h-10 w-10 object-contain"
+    />
+  </div>
+      <p class="font-medium mb-1">Auditoría y Cumplimiento.</p>
+     </div>
+  </div>
+</section>
+
+<!-- Industrias con íconos tipo botón horizontal -->
+<section class="bg-white px-6 py-24 md:px-12">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">Industrias</h2>
+  </div>
+
+ <div class="bg-gray-100 rounded-2xl p-8 max-w-5xl mx-auto">
+    <div class="flex flex-col items-center gap-6">
+    <!-- Fila 3: 2 elementos centrados -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
+      <div class="flex items-center  rounded-xl p-4">
+    <img
+      src="/Tesseract/parthenon.png"
+      alt="Financiera"
+      class="h-10 w-10 object-contain mr-4"
+    />
+        <p class="text-base font-medium text-black">Financieras</p>
+      </div>
+
+       <div class="flex items-center rounded-xl p-4">
+    <img
+      src="/Tesseract/Industria.png"
+      alt="Industria"
+      class="h-10 w-10 object-contain mr-4"
+    />
+        <p class="text-base font-medium text-black">Industrias gubernamentales</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+</Layout>

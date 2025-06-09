@@ -1,0 +1,59 @@
+---
+import AvisoModal from './AvisoModal.jsx';
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-black text-white py-10 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Logo + descripción -->
+    <div>
+      <img src="/conectaF.png" alt="Logo Conecta" class="h-10 mb-4" />
+      <p class="text-gray-400 text-sm">
+        Soluciones tecnológicas para empresas que buscan operar con confianza en la era digital.
+      </p>
+    </div>
+
+    <!-- Enlaces útiles -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Enlaces</h3>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href="/" class="hover:text-white">Inicio</a></li>
+        <li><a href="#nosotros" class="hover:text-white">Nosotros</a></li>
+        <li><a href="/unidades/conecta-cripto" class="hover:text-white">Unidades</a></li>
+        <li><a href="/contacto" class="hover:text-white">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Contacto + redes -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Contacto</h3>
+      <ul class="text-sm text-gray-400 space-y-2 mb-4">
+        <li>Email: <a href="mailto:contacto@conecta.mx" class="hover:text-white">contacto@conecta.mx</a></li>
+        <li>Tel: <a href="tel:5594 1800 76" class="hover:text-white"> 5594 1800 76</a></li>
+        <li>CDMX, México</li>
+      </ul>
+
+      <!-- Redes sociales (React icons renderizados como componentes) -->
+      <div class="flex space-x-4 mt-2 text-white">
+         <a href="https://www.linkedin.com/company/conectamx/ " target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <Linkedin class="w-5 h-5 hover:text-purple-600 transition" />
+        </a>
+        <a href="https://www.instagram.com/conectamx_soluciones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <Instagram class="w-5 h-5 hover:text-purple-600 transition" />
+        </a>
+        <a href="https://www.facebook.com/ConectaSolucionesMX" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <Facebook class="w-5 h-5 hover:text-purple-600 transition" />
+        </a>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+    <p class="mb-2">© {year} Conecta. Todos los derechos reservados.</p>
+    <AvisoModal client:only="react" />
+  </div>
+</footer>

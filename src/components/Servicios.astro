@@ -1,0 +1,58 @@
+---
+// src/pages/index.astro (o donde tengas tu sección de servicios)
+import ServiciosCards from "../components/ServiciosCards.jsx";
+---
+<section id="servicios" class="py-24 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <!-- Título -->
+    <div class="text-center md:text-left mb-12">
+      <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
+        Cuatro verticales de negocio,
+      </h2>
+      <p class="text-4xl text-black">
+        una misma <span class="font-semibold">fuerza tecnológica</span>
+      </p>
+    </div>
+
+    <!-- Componente React con tarjetas y logo dinámico -->
+    <ServiciosCards client:visible />
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Detectar si el usuario vino con el botón "atrás"
+    const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+    if (navType === "back_forward") {
+      const id = localStorage.getItem("servicio-id");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      localStorage.removeItem("servicio-id");
+    }
+  });
+</script>
+<!-- Título con fondo gris -->
+<div class=" bg-white w-full pt-6 pb-2">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">
+      Partners que fortalecen nuestra visión
+    </h2>
+  </div>
+</div>
+
+<!-- Sección de logos de alianzas en franja blanca -->
+<section class="bg-white px-6 py-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+    <!-- Ajusta los paths de imagen si es necesario -->
+    <img src="/alianzas/01_GoogleCloud.png" alt="Google Cloud" class="w-full max-h-20 object-contain mx-auto" />
+    <img src="/alianzas/02_Thales.png" alt="Thales" class="w-full max-h-20 object-contain mx-auto" />
+    <img src="/alianzas/03_Utimaco.png" alt="Utimaco" class="w-full max-h-20 object-contain mx-auto" />
+    <img src="/alianzas/04_Entrust.png" alt="Entrust" class="w-full max-h-20 object-contain mx-auto" />
+    <img src="/alianzas/05_FintechMex.png" alt="Fintech Mex" class="w-full max-h-20 object-contain mx-auto" />
+    <img src="/alianzas/06_AMSOFIPO.png" alt="AMSOFIPO" class="w-full max-h-20 object-contain mx-auto" />
+  </div>
+</section>

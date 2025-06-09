@@ -1,0 +1,391 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import LandingUnidad from '../../components/LandingUnidad.astro'
+import LogoCarousel from '../../components/LogoCarousel.jsx'; // Asegúrate de importarlo
+
+const logosempresas = [
+"/Conecta/01_Banorte.png",
+"/Conecta/02_Invex.png",
+"/Conecta/03_Plata.png",
+"/Conecta/04_Nissan.png",
+"/Conecta/05_Covalto.png",
+];
+const carouselTitle = "Empresas que confían en nosotros";
+
+// casillas.astro
+const casillas = [
+  { texto: "Assessment de criptografía aplicada a protección de datos." },
+  { texto: "Consultoría HSM para compliance local e internacional (CNVB, Visa, MC, FIPS, PCI-DSS)." },
+  { texto: "Capacitación en administración de HSMs y mejores prácticas." },
+  { texto: "Implementación de HSMs on-Premise y Cloud y plataforma de Key Management." },
+  { texto: "Upgrade de plataformas HSM." },
+  { texto: "Migración entre tecnologías de HSM." },
+  { texto: "Soporte TIER-1 para fabricante." },
+  { texto: "Servicios de mantenimiento HSM." },
+  { texto: "CryptoCloud Sec: Migración de on-Premise a Cloud (GCP)." },
+];
+
+---
+
+
+<Layout>
+  
+<LandingUnidad
+  imagenHero="/Conecta/cripto.png"
+  colorFrase="#800080"
+  textoBoton="Agenda una demo"
+  colorBoton="white"
+  tituloTarjetas="Nuestras soluciones te ayudan a"
+  fraseSecundaria="Soluciones en cifrado de datos, HSMs y cumplimiento."
+  fraseHero={[
+    { text: "Simplificamos la protección \nde datos", bold: true },
+    { text: " con la tecnología \nmás robusta: HSMs" }
+  ]}
+  tarjetas={[
+    {
+      imagen: "/Conecta/protege.png",
+      frase: [
+        { text: "Proteger los datos, porque \nsabemos que " },
+        { text: "son tu activo \nmás importante." , bold: true}
+      ]
+    },
+    {
+      imagen: "/Conecta/asegura.png",
+      frase: [
+        { text: "Asegurar el "},
+        { text: "\ncumplimiento normativo.", bold: true  }
+      ]
+    },
+    {
+      imagen: "/Conecta/mitiga.png",
+      frase: [
+        { text: "Mitigar el daño  ", bold: true },
+        { text: "por el \nrobo de información." }
+      ]
+    },{
+      imagen: "/Conecta/reputacion.png",
+      frase: [
+        { text: "Proteger tu " },
+        { text: "reputación.", bold: true }
+      ]
+    },{
+      imagen: "/Conecta/evita.png",
+      frase: [
+        { text: "Evitar posibles " },
+        { text: "\nmultas millonarias." , bold: true}
+      ]
+    }
+  ]}
+>
+ 
+  <div slot="carrusel" class="mt-12">
+      <div class="max-w-6xl mx-auto">
+        <LogoCarousel logos={logosempresas} title={carouselTitle} client:only="react" />
+      </div>
+  </div>
+</LandingUnidad>
+
+
+
+ <!-- 🟣 Alianzas estratégicas -->
+<section id="alianzas" class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-3xl md:text-4xl font-medium text-black text-center mb-18">
+    Alianzas estratégicas
+  </h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-center">
+    <img src="/alianzas/02_Thales.png" alt="Thales" class="w-full h-auto object-contain" />
+    <img src="/alianzas/01_GoogleCloud.png" alt="Google Cloud" class="w-full h-auto object-contain" />
+    <img src="/alianzas/04_Entrust.png" alt="Entrust" class="w-full h-auto object-contain" />
+    <img src="/alianzas/03_Utimaco.png" alt="Utimaco" class="w-full h-auto object-contain" />
+  </div>
+</section>
+
+<section id="servicios" class="max-w-4xl mx-auto px-6 py-24">
+  <h2 class="text-3xl md:text-4xl font-medium text-gray-800 text-center mb-12">
+    Servicios profesionales
+  </h2>
+
+  <div class="grid grid-cols-3 relative overflow-visible bg-white">
+    {
+      casillas.map((casilla, i) => (
+        <div class="relative p-6 text-sm leading-relaxed text-gray-800 font-light bg-white min-h-[130px] flex items-center justify-center text-center">
+          
+        {/* Línea horizontal desde 3 a 6 → se dibuja en 3 y 6 */}
+{(i === 3 || i === 6) && (
+  <div class="absolute top-0 left-0 w-full h-[2px] z-10 bg-gradient-to-l from-[#800080] to-white" />
+)}
+
+
+          {/* Línea horizontal desde 6 a 8 → se dibuja en 8 */}
+          {(i === 5 || i==8) && (
+            <div class="absolute top-0 left-0 w-full h-[2px] z-10 bg-gradient-to-l  from-white to-[#800080] " />
+          )}
+           {/* Línea horizontal desde 6 a 8 → se dibuja en 8 */}
+          {(i === 4 || i==7) && (
+            <div class="absolute top-0 left-0 w-full h-[2px] z-10 bg-[#800080] " />
+          )}
+
+          {/* Línea vertical desde 0 a 6 → se dibuja en 6 */}
+          {(i === 4 || i == 5) && (
+            <div class="absolute top-0 left-0 h-full w-[2px] z-10  bg-[#800080]" />
+          )}
+
+           {/* Línea vertical desde 0 a 6 → se dibuja en 6 */}
+          {(i === 1 || i == 2) && (
+            <div class="absolute top-0 left-0 h-full w-[2px] z-10 bg-gradient-to-t from-[#800080] to-white" />
+          )}
+
+          {/* Línea vertical desde 2 a 8 → se dibuja en 8 */}
+          {(i === 8 || i==7)&& (
+            <div class="absolute top-0 left-0 h-full w-[2px] z-10 bg-gradient-to-t from-white to-[#800080]" />
+          )}
+
+          <span class="font-medium text-base">{casilla.texto}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>
+<style>
+  .line-grad-center-y {
+    background: linear-gradient(to top, white, #800080 50%, #800080 50%, white);
+  }
+
+  .line-grad-center-x {
+    background: linear-gradient(to left, white, #800080 50%, #800080 50%, white);
+  }
+</style>
+
+<!-- Capacidades de HSM -->
+<section class="bg-white px-6 py-24 md:px-12">
+  <!-- Título -->
+  <div class="max-w-6xl mx-auto text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">Nuestros HSMs te ayudan en:</h2>
+  </div>
+
+  <!-- Círculo con etiquetas -->
+  <div class="flex justify-center items-center px-6">
+    <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] flex items-center justify-center">
+      
+      <!-- Círculo con borde degradado -->
+      <div class="absolute w-full h-full z-10 rounded-full flex items-center justify-center">
+        <div class="w-full h-full rounded-full" style="background: conic-gradient(#000, #800080);"></div>
+        <div class="absolute w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full bg-white"></div>
+      </div>
+
+      <!-- Imagen central -->
+      <img src="/hm.png" alt="HSM Icon" class="z-20 w-24 h-24 object-contain" />
+
+      <!-- Etiquetas -->
+      <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+        <div class="relative w-full h-full">
+
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Cifrado de archivos
+            </div>
+          </div>
+
+          <div class="absolute top-[15%] left-[85%] -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Cifrado de redes
+            </div>
+          </div>
+
+          <div class="absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Autenticación
+            </div>
+          </div>
+
+          <div class="absolute bottom-[15%] left-[85%] -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Gestión de certificados
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Cifrado de SPEI
+            </div>
+          </div>
+
+          <div class="absolute bottom-[15%] left-[15%] -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Cifrado de contraseñas
+            </div>
+          </div>
+
+          <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Firma electrónica
+            </div>
+          </div>
+
+          <div class="absolute top-[15%] left-[15%] -translate-x-1/2 pointer-events-auto z-30">
+            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
+              Tokens Físicos
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección de soluciones específicas -->
+<!-- Soluciones de Seguridad en forma de rectángulo -->
+<div class="relative w-full flex justify-center items-center mt-20 px-6">
+  <div class="relative w-[360px] h-[240px] md:w-[600px] md:h-[320px] flex items-center justify-center">
+    
+    <!-- Rectángulo con contorno degradado -->
+    <div class="absolute w-full h-full z-10 rounded-3xl" style="
+      background: linear-gradient(90deg, black, purple);
+      -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      padding: 6px;
+      box-sizing: border-box;
+    "></div>
+
+    <!-- Título centrado -->
+    <div class="z-20 text-center text-black text-2xl md:text-2xl font-medium">
+      Protegemos lo<br> más importante 
+    </div>
+
+    <!-- Botones alrededor del rectángulo -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="relative w-full h-full">
+
+        <!-- Superior centro -->
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Horus</div>
+        </div>
+
+        <!-- Esquina superior derecha -->
+        <div class="absolute -top-3 right-20 translate-x-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">CryptoFin</div>
+        </div>
+
+        <!-- Centro derecha -->
+        <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 pointer-events-auto w-32 text-center z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">HSMs, propósito general y financiero</div>
+        </div>
+
+        <!-- Esquina inferior derecha -->
+        <div class="absolute bottom-10 right-0 translate-x-1/2 pointer-events-auto text-center w-40 z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Plataforma Key Management</div>
+        </div>
+
+        <!-- Inferior centro -->
+        <div class="absolute -bottom-4 left-23 -translate-x-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Encriptor de Red <br>(HSE)</div>
+        </div>
+
+        <!-- Esquina inferior izquierda -->
+        <div class="absolute bottom-13 left-0 -translate-x-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Token móvil</div>
+        </div>
+
+        <!-- Centro izquierda -->
+        <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">IAM/CIAM</div>
+        </div>
+
+        <!-- Esquina superior izquierda -->
+        <div class="absolute -top-3 left-20 -translate-x-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">WAF</div>
+        </div>
+
+        <!-- Entre izquierda y superior -->
+        <div class="absolute top-[20%] left-[2%] -translate-x-1/2 pointer-events-auto text-center z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Advanced Bot <br>Protection</div>
+        </div>
+
+        <!-- Entre derecha y superior -->
+        <div class="absolute top-[20%] right-[0%] translate-x-1/2 pointer-events-auto text-center z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">API Security</div>
+        </div>
+
+        <!-- Inferior centro-izquierda -->
+        <div class="absolute -bottom-5 -right-3 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
+          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">DDoS Protection</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
+<!-- Industrias con íconos tipo botón horizontal -->
+<section class="bg-white px-6 py-24 md:px-12">
+  <div class="max-w-5xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">Industrias a las que aplicamos</h2>
+  </div>
+
+  <!-- Contenedor gris -->
+  <div class="bg-gray-100 rounded-2xl p-8 max-w-5xl mx-auto">
+    <div class="flex flex-col items-center gap-6">
+
+      <!-- Fila 1 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
+        <div class="flex items-center bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/image.png" alt="Financiera" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Financiera</p>
+        </div>
+        <div class="flex items-center bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/salud.png" alt="Salud" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Salud</p>
+        </div>
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/Aseguradoras.png" alt="Aseguradoras" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Aseguradoras</p>
+        </div>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/ecommerce.png" alt="E-commerce" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">E-commerce</p>
+        </div>
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/automovilistica.png" alt="Automovilistica" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Automotriz</p>
+        </div>
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/parthenon.png" alt="Gobierno" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Gobierno</p>
+        </div>
+      </div>
+
+      <!-- Fila 3 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/circuit-board.png" alt="Tecnologia" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Tecnológica</p>
+        </div>
+        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
+          <img src="/Conecta/broadcast.png" alt="Telecomunicaciones" class="h-10 w-10 object-contain mr-4" />
+          <p class="text-base font-medium text-black">Telecomunicaciones</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  
+
+  </div>
+</section>
+
+
+</Layout>

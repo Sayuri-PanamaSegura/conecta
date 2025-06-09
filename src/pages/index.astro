@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Nosotros from '../components/Nosotros.astro'
+import Servicios from '../components/Servicios.astro'
+import Testimonios from "../components/Testimonios.jsx"
+import LogoCarousel from "../components/LogoCarousel.jsx";
+import NosotrosR from './nosotros.astro'
+---
+
+<Layout>
+  <Hero />
+ <Nosotros/> 
+  <Servicios />
+ <!--<Testimonios client:only="react"/>-->
+ <NosotrosR/> 
+ <LogoCarousel client:only="react" />
+  
+</Layout>
+
+	
+</html>

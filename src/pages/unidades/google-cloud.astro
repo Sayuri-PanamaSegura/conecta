@@ -1,0 +1,300 @@
+---
+// src/pages/unidades/googlecloud.astro
+
+import Layout from "../../layouts/Layout.astro";
+
+const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústala
+---
+
+<Layout>
+  <section class="bg-[#FAFAFA] pt-24 px-6 py-24 md:px-10">
+    <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+
+      <!-- Texto izquierdo -->
+      <div class="md:w-1/2 text-left">
+        <h1 class="text-3x1 md:text-4xl font-semibold text-[color:var(--primary,_#4688F1)] leading-tight mb-6">
+          <span class="text-black">Conecta:</span> Seguridad y Eficiencia en la Nube
+        </h1>
+       <p class="text-lg font-light text-black leading-relaxed">
+  En <span class="font-semibold">Conecta</span>, entendemos que la <span class="font-semibold">seguridad y la eficiencia son fundamentales </span> para cualquier organización que  confía en la nube. </br> </br>Ofrecemos una <span class="font-semibold">infraestructura robusta y optimizada</span>, </br>asegurando que cada proyecto cumpla con los  <span class="font-semibold"> más altos  estándares de protección de datos y rendimiento</span>.
+</p>
+
+      </div>
+
+      <!-- Imagen derecha -->
+      <div class="md:w-1/2 flex justify-center">
+        <img src={imagen} alt="Google Cloud infraestructura" class="max-w-md w-full object-contain" />
+      </div>
+
+    </div>
+  </section>
+<section class="bg-white px-6 py-24 md:px-12">
+  <div class="max-w-4xl mx-auto mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black mb-10">Enfoque Integral en Seguridad</h2>
+
+    <div class="space-y-8">
+      <!-- Bloque 1 -->
+      <div class="flex gap-4 items-start">
+        <div
+          style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #4688F1; background: white;"
+          class="flex items-center justify-center"
+        >
+          <img
+            src="/Google/encryption.png"
+            alt="Cifrado"
+            style="width: 48px; height: 48px; object-fit: contain;"
+          />
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-black mb-1">Cifrado Avanzado</h3>
+          <p class="text-sm font-medium text-black leading-relaxed">
+            Protegemos la información sensible con <span class="font-semibold">cifrado de extremo a extremo</span>, tanto en tránsito como en almacenamiento, utilizando las <span class="font-semibold">últimas tecnologías</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bloque 2 -->
+      <div class="flex gap-4 items-start">
+        <div
+          style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #4688F1; background: white;"
+          class="flex items-center justify-center"
+        >
+          <img
+            src="/Google/cumplimiento.png"
+            alt="Cumplimiento"
+            style="width: 48px; height: 48px; object-fit: contain;"
+          />
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-black mb-1">Cumplimiento Normativo</h3>
+          <p class="text-sm font-light text-black leading-relaxed">
+            Asesoramos a las empresas para cumplir con <span class="font-semibold">GDPR, HIPAA, ISO 27001</span> y otras regulaciones, garantizando la alineación con los <span class="font-semibold">requisitos legales</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bloque 3 -->
+      <div class="flex gap-4 items-start">
+        <div
+          style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #4688F1; background: white;"
+          class="flex items-center justify-center"
+        >
+          <img
+            src="/Google/autenticac.png"
+            alt="Autenticación"
+            style="width: 48px; height: 48px; object-fit: contain;"
+          />
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-black mb-1">Autenticación y Control de Acceso</h3>
+          <p class="text-sm font-light text-black leading-relaxed">
+            Implementamos <span class="font-semibold">autenticación multifactor (MFA)</span> y políticas de acceso basadas en roles para minimizar riesgos de accesos no autorizados y <span class="font-semibold">fortalecer la seguridad</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bloque 4 -->
+      <div class="flex gap-4 items-start">
+        <div
+          style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #4688F1; background: white;"
+          class="flex items-center justify-center"
+        >
+          <img
+            src="/Google/monitoreo.png"
+            alt="Monitoreo"
+            style="width: 48px; height: 48px; object-fit: contain;"
+          />
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-black mb-1">Monitoreo y Respuesta a Incidentes</h3>
+          <p class="text-sm font-light text-black leading-relaxed">
+            Utilizamos <span class="font-semibold">herramientas avanzadas</span> para la detección de amenazas y una <span class="font-semibold">respuesta automática</span>, reaccionando rápidamente ante cualquier vulnerabilidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-white px-6 py-24 max-w-5xl mx-auto  md:px-12 border-10 text-start rounded-2xl" style="border-color: #4688F1;">
+  <div class="max-w-4xl mx-auto text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
+      Optimización de Recursos en Google Cloud
+    </h2> 
+   
+  </div>
+
+  <!-- Cambiado a 3 columnas -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    <!-- Tarjeta 1 -->
+    <div class="p-4 flex gap-4 items-start">
+      <img src="/Google/reducci.png" alt="Reduccion" class="w-10 h-10 object-contain" />
+      <div>
+        <p class="font-semibold text-black">Reducción de Costos</p>
+        <p class="text-sm text-black">
+          Diseñamos arquitecturas en la nube que optimizan el gasto operativo sin comprometer el rendimiento, aprovechando al máximo los recursos de Google Cloud.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="p-4 flex gap-4 items-start">
+      <img src="/Google/escalabilidad.png" alt="Escalabilidad" class="w-10 h-10 object-contain" />
+      <div>
+        <p class="font-semibold text-black">Escalabilidad Automática</p>
+        <p class="text-sm text-black">
+          Nuestras soluciones permiten una adaptación en tiempo real a la demanda, asegurando que su infraestructura crezca y se adapte con su negocio.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="p-4 flex gap-4 items-start">
+  <img src="/Google/rendimiento.png" alt="Rendimiento" class="w-10 h-10 object-contain" />
+      <div>
+        <p class="font-semibold text-black text-base">Rendimiento Mejorado</p>
+        <p class="text-sm text-black">
+          Aseguramos que tus aplicaciones y servicios <span class="font-semibold">operen con la máxima velocidad y eficiencia</span>, maximizando la productividad.
+        </p>
+      </div>
+    </div>
+  </div>
+   <p class="text-base text-black font-medium">
+      Nuestro compromiso es garantizar que cada solución en la nube sea segura, eficiente y adaptada a las necesidades específicas de tu empresa, impulsando su crecimiento y competitividad en el mercado actual.
+    </p>
+</section>
+
+
+<section class="bg-white py-24 px-6 md:px-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
+    
+    <!-- Imagen a la izquierda -->
+    <div class="w-full">
+      <img src="/Google/group.png" alt="Google Workspace" class="rounded-xl shadow-lg w-full object-cover" />
+    </div>
+
+    <!-- Contenido a la derecha (título + bloques) -->
+    <div class="w-full">
+      <div class="flex flex-col gap-8">
+        
+        <!-- Título y subtítulo -->
+        <div class="text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-medium text-black mb-2">
+            Colaboración y Automatización con Google Workspace
+          </h2>
+          <p class="text-black text-base md:text-lg">
+            Aprovecha el poder de las herramientas colaborativas de Google para optimizar tu flujo de trabajo.
+          </p>
+        </div>
+
+        <!-- Bloques -->
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Bloque 1 -->
+          <div class="flex-1 text-center md:text-left">
+            <img src="/Google/colab.png" alt="Icono colaboración" class="mx-auto md:mx-0 mb-4 w-12 h-12" />
+            <p class="font-semibold text-black mb-2 text-base">Colaboración</br> Ágil</p>
+            <p class="text-sm text-black">
+              Facilitamos el trabajo en equipo con herramientas como Google Drive y Docs, permitiendo la edición en tiempo real y la gestión eficiente de documentos.
+            </p>
+          </div>
+
+          <!-- Bloque 2 -->
+          <div class="flex-1 text-center md:text-left">
+            <img src="/Google/meet.png" alt="Icono colaboración" class="mx-auto md:mx-0 mb-4 w-12 h-12" />
+            <p class="font-semibold text-black mb-2">Comunicación Fluida</p>
+            <p class="text-sm text-black">
+              Google Meet y Gmail aseguran una comunicación constante y segura, ideal para equipos distribuidos y reuniones productivas.
+            </p>
+          </div>
+
+          <!-- Bloque 3 -->
+          <div class="flex-1 text-center md:text-left">
+            <img src="/Google/artificial.png" alt="Icono colaboración" class="mx-auto md:mx-0 mb-4 w-12 h-12" />
+            <p class="font-semibold text-black mb-2">Automatización Inteligente</p>
+            <p class="text-sm text-black">
+              Integración con IA y Machine Learning para análisis predictivos y toma de decisiones, transformando sus datos en valor.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-white py-24 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">Servicios Cloud Especializados</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <!-- Google Cloud -->
+    <div class="bg-[#4688F1] text-white rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-3">Google Cloud</h3>
+      <p class="text-sm leading-relaxed font-light">
+        Optimiza tu infraestructura con la escalabilidad y rendimiento de Google Cloud. Desde almacenamiento hasta análisis de datos, te ofrecemos soluciones adaptadas a tu negocio.
+      </p>
+    </div>
+
+    <!-- Google Workspace -->
+    <div class="bg-[#4688F1] text-white rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-3">Google Workspace</h3>
+      <p class="text-sm leading-relaxed font-light">
+        Facilitamos la colaboración en equipo con herramientas como Gmail, Drive y Meet. Trabaja desde cualquier lugar, con total seguridad y eficiencia.
+      </p>
+    </div>
+
+    <!-- Seguridad y Cumplimiento -->
+    <div class="bg-[#4688F1] text-white rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-3">Seguridad y Cumplimiento</h3>
+      <p class="text-sm leading-relaxed font-light">
+        Protege información sensible con soluciones avanzadas de cifrado y cumplimiento normativo. Nuestro enfoque garantiza que tus datos estén siempre seguros.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="bg-white py-24 px-6 md:px-12">
+  <div class="max-w-4xl mx-auto text-start mb-12">
+    <h2 class="text-3xl md:text-4xl font-medium text-black">Beneficios de Elegir Conecta</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+    <!-- Disponibilidad -->
+    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
+      <p class="text-4xl font-bold text-[#4688F1] mb-2">99.9%</p>
+      <p class="text-lg font-semibold text-black mb-2">Disponibilidad</p>
+      <p class="text-sm text-black">
+        Garantizamos una alta disponibilidad de tus servicios, asegurando la continuidad operativa en todo momento.
+      </p>
+    </div>
+
+    <!-- Ahorro de Costos -->
+    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
+      <p class="text-4xl font-bold text-[#4688F1] mb-2">20%</p>
+      <p class="text-lg font-semibold text-black mb-2">Ahorro de Costos</p>
+      <p class="text-sm text-black">
+        Nuestras arquitecturas optimizadas pueden reducir significativamente tus gastos operativos en la nube.
+      </p>
+    </div>
+
+    <!-- Conformidad -->
+    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
+      <p class="text-4xl font-bold text-[#4688F1] mb-2">100%</p>
+      <p class="text-lg font-semibold text-black mb-2">Conformidad</p>
+      <p class="text-sm text-black">
+        Cumplimos con las regulaciones más estrictas para proteger tus datos y asegurar la privacidad.
+      </p>
+    </div>
+  </div>
+
+  <!-- Mensaje Final -->
+  <div class="max-w-4xl mx-auto mt-12 text-start">
+    <p class="text-base text-blac font-medium leading-relaxed">
+      Nuestro compromiso es asegurar que cada solución en la nube sea segura, eficiente y adaptada a las necesidades específicas de cada empresa, impulsando su crecimiento y competitividad en el mercado actual.
+    </p>
+  </div>
+</section>
+
+
+</Layout>
