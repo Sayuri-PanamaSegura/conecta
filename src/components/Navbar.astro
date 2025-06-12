@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <nav
   id="navbar"
-  class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-white/40 backdrop-blur-md border border-white/30 rounded-full shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300"
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-[#FAFAFA] backdrop-blur-md border border-white/30 rounded-full shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300"
 >
   <!-- Logo -->
   <a href="/" class="flex items-center space-x-2">
@@ -15,41 +15,47 @@
 
   <!-- Nav Links -->
   <div class="hidden md:flex space-x-6 text-sm font-medium text-black relative">
-    <a href="#nosotros" class="nav-link hover:text-gray-300 transition">NOSOTROS</a>
+    <a href="#nosotros" class="nav-link hover:text-[#FAFAFA] transition">NOSOTROS</a>
 
     <!-- Submenú -->
     <div class="relative group">
-      <a href="#servicios" class="nav-link hover:text-gray-300 transition">SOLUCIONES</a>
-      <div class="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200 z-50">
-        <a href="/unidades/conecta-cripto" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Conecta Cripto</a>
-        <a href="/unidades/tesseract" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Tesseract</a>
-        <a href="/unidades/hermes" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Hermes</a>
-        <a href="/unidades/google-cloud" class="block px-4 py-2 text-gray-700 hover:bg-purple-100 rounded transition">Google Cloud</a>
+      <button class="nav-link hover:text-[#FAFAFA] transition flex items-center gap-1 focus:outline-none">
+        <span>SOLUCIONES</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mt-[1px] transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        class="absolute top-full left-0 mt-2 bg-[#FAFAFA] border border-gray-700 rounded-lg shadow-lg p-2 w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200 z-50"
+      >
+        <a href="/unidades/conecta-cripto" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">CONECTA CRIPTOGRAFÍA</a>
+        <a href="/unidades/tesseract" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">TESSERACT</a>
+        <a href="/unidades/hermes" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">HERMES </a>
+        <a href="/unidades/google-cloud" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">GOOGLE CLOUD</a>
       </div>
     </div>
 
-    <a href="/servicioalcliete" class="nav-link hover:text-purple-600 transition">Soporte</a>
-    <a href="/blog" class="nav-link hover:text-purple-600 transition">Blog</a>
+    <a href="/servicioalcliete" class="nav-link hover:text-[#FAFAFA] transition">SOPORTE</a>
+    <a href="/blog" class="nav-link hover:text-[#FAFAFA] transition">BLOG</a>
   </div>
 
-<a
-  href="/contacto"
-  class="relative inline-block px-6 py-2 font-medium text-white group hidden md:inline-block shadow-md rounded-full"
->
-  <!-- Cortina animada gris muy clarita -->
-  <span class="absolute inset-0 w-full h-full bg-[#F0F0F0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full z-0"></span>
+  <a
+    href="/contacto"
+    class="relative inline-block px-6 py-2 font-medium text-white group hidden md:inline-block shadow-md rounded-full"
+  >
+    <!-- Cortina animada gris muy clarita -->
+    <span class="absolute inset-0 w-28 h-28 bg-[#F0F0F0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full z-0"></span>
 
-  <!-- Texto -->
-  <span class="relative z-10 text-gray-800 px-6 py-2 block transition-colors duration-300">
-    Contacto
-  </span>
-</a>
-
+    <!-- Texto -->
+    <span class="relative z-10 text-black px-6 py-2 block transition-colors duration-300">
+      CONTACTO
+    </span>
+  </a>
 
   <!-- Botón hamburguesa (solo móvil) -->
   <button
     id="hamburger-btn"
-    class="text-black text-2xl p-2 rounded-full border border-black hover:bg-purple-100 transition duration-300 z-50 md:hidden"
+    class="text-black text-2xl p-1 hover:bg-purple-100 transition duration-300 z-50 md:hidden"
   >
     ☰
   </button>
@@ -72,7 +78,12 @@
     <a href="#servicios" class="block text-gray-700 hover:text-purple-600">Servicios</a>
     <a href="/servicio-Tecnico" class="block text-gray-700 hover:text-purple-600">Servicio Técnico</a>
     <a href="/blog" class="block text-gray-700 hover:text-gray-300">Blog</a>
-    <a href="/contacto" class="block text-white font-semibold hover:text-gray-300">Contacto</a>
+    <a
+      href="/contacto"
+      class="relative inline-flex items-center justify-center h-8 px-4 text-sm font-medium text-gray-800 bg-[#F0F0F0] hover:bg-purple-100 transition-colors duration-300 rounded-full shadow hidden md:inline-flex"
+    >
+      CONTACTO
+    </a>
   </div>
 </div>
 
@@ -87,17 +98,16 @@
     const logo = document.getElementById("navbar-logo");
 
     if (window.scrollY > 50) {
-  navbar.classList.add("py-1");
-  navbar.classList.remove("py-3");
-  logo.classList.add("h-6");
-  logo.classList.remove("h-8");
-} else {
-  navbar.classList.add("py-3");
-  navbar.classList.remove("py-1");
-  logo.classList.add("h-8");
-  logo.classList.remove("h-6");
-}
-
+      navbar.classList.add("py-1");
+      navbar.classList.remove("py-3");
+      logo.classList.add("h-6");
+      logo.classList.remove("h-8");
+    } else {
+      navbar.classList.add("py-3");
+      navbar.classList.remove("py-1");
+      logo.classList.add("h-8");
+      logo.classList.remove("h-6");
+    }
   });
 
   // Scrollspy
@@ -115,12 +125,13 @@
       });
 
       navLinks.forEach((link) => {
-       link.classList.remove("text-black", "border-b-2", "border-black");
-if (link.getAttribute("href") === current) {
-  link.classList.add("text-black", "border-b-2", "border-black");
-}
+  link.classList.remove("underline", "decoration-black", "underline-offset-4");
+  if (link.getAttribute("href") === current) {
+    link.classList.add("underline", "decoration-black", "underline-offset-4");
+  }
+});
 
-      });
+
     });
   });
 

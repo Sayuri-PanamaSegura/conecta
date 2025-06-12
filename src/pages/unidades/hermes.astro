@@ -2,7 +2,11 @@
 import Layout from '../../layouts/Layout.astro'
 import LandingUnidad from '../../components/LandingUnidad.astro'
 import LogoCarousel from '../../components/LogoCarousel.jsx'; // Asegúrate de importarlo
-
+import MotionFadeIn from '../../components/movimiento/MotionFadeIn';
+import SpreadReveal from '../../components/movimiento/SpreadReveal.jsx';
+import ScrollLine from '../../components/movimiento/ScrollLine';
+import AnimatedCircle from '../../components/movimiento/AnimatedCircle.jsx';
+import { motion } from 'framer-motion';
 const logosempresas = [
 "/Hermes/01_Kubo.png",
 "/Hermes/02_HDISeguros.png",
@@ -24,11 +28,10 @@ const carouselTitle = "Empresas que confían en nosotros";
   colorBoton="white"
   tituloTarjetas={[
   { text: "Para antes del 2030 se harán "},
-  { text: "\nmás operaciones por SPEI \nque con tarjetas. ", bold: true },
-  { text: " \n\nPara mantener su competitividad en el \nmercado actual, las empresas requieren:", bold: false }
+  { text: "\nmás operaciones por SPEI® \nque con tarjetas. ", bold: true }
 ]}
 fraseHero={[
-    { text: "Más que SPEI: ", bold: true },
+    { text: "Más que SPEI®: ", bold: true },
     { text: " somos \ntu" },
     { text: " aliado tecnológico \ny estratégico", bold: true }
   ]} 
@@ -37,7 +40,7 @@ fraseHero={[
       imagen: "/Hermes/crecimiento.png",
       frase: [
         { text: "Crecimiento Exponencial ", bold: true },
-        { text: " \nEl volumen de transacciones \nSPEI se disparará, \nconvirtiéndose en el método \nde pago dominante." }
+        { text: " \nEl volumen de transacciones \nSPEI® se disparará, \nconvirtiéndose en el método \nde pago dominante." }
       ]
     },  
     {
@@ -65,8 +68,8 @@ fraseHero={[
 
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-4xl mx-auto text-start mb-16">
-    <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
-      Hermes Gateway: Tu Plataforma SPEI </br>Personalizada
+    <h2 class="text-4xl md:text-4xl font-medium text-black mb-4">
+      Hermes Gateway: </br> tu plataforma SPEI<sup>®</sup>
     </h2>
     <p class="text-lg text-black font-medium">
       Diseñada específicamente para satisfacer las necesidades de tu institución financiera, garantizando una integración fluida y conforme a la normativa.
@@ -79,9 +82,9 @@ fraseHero={[
 <!-- Tarjeta 1 -->
 <div class="p-4 flex gap-4 items-start">
   <!-- Círculo azul -->
-  <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shrink-0">
+  <div class="w-14 h-14 bg-[#2836EF] rounded-full flex items-center justify-center shrink-0">
     <img
-      src="/Hermes/consulto.png"
+      src="/Hermes/consultori-white.png"
       alt="Consultoría"
       class="w-8 h-8 object-contain"
     />
@@ -90,7 +93,7 @@ fraseHero={[
   <!-- Texto -->
   <div>
     <p class="font-semibold text-black text-base">Consultoría Especializada</p>
-    <p class="text-base text-black">Facilitamos tu incorporación al SPEI con el apoyo de expertos.</p>
+    <p class="text-base text-black">Facilitamos tu incorporación al SPEI<sup>®</sup> con el apoyo de expertos.</p>
   </div>
 </div>
 
@@ -99,9 +102,9 @@ fraseHero={[
     <!-- Tarjeta 2 -->
     <div class="p-4 flex gap-4 items-start">
   <!-- Círculo azul -->
-  <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shrink-0">
+  <div class="w-14 h-14 bg-[#2836EF] rounded-full flex items-center justify-center shrink-0">
    <img
-      src="/Hermes/evaluaci.png"
+      src="/Hermes/evaluacion-white.png"
       alt="Evaluacion"
       class="h-10 w-10 object-contain"
     />
@@ -115,9 +118,9 @@ fraseHero={[
     <!-- Tarjeta 3 -->
     <div class="p-4 flex gap-4 items-start">
   <!-- Círculo azul -->
-  <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shrink-0">
+  <div class="w-14 h-14 bg-[#2836EF] rounded-full flex items-center justify-center shrink-0">
      <img
-      src="/Hermes/auditor.png"
+      src="/Hermes/auditori-white.png"
       alt="Auditorias"
       class="h-10 w-10 object-contain"
     /></div>
@@ -130,10 +133,10 @@ fraseHero={[
     <!-- Tarjeta 4 -->
 <div class="p-4 flex gap-4 items-start">
   <!-- Círculo azul -->
-  <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center shrink-0">
+  <div class="w-14 h-14 bg-[#2836EF] rounded-full flex items-center justify-center shrink-0">
    
       <img
-      src="/Hermes/transaccione.png"
+      src="/Hermes/transacciones_seguras-white.png"
       alt="Transacciones"
       class="h-10 w-10 object-contain"
     /></div>
@@ -145,177 +148,166 @@ fraseHero={[
   </div>
 </section>
 
-
 <section class="bg-white px-6 py-24 md:px-12">
-    <div class="max-w-5xl mx-auto text-center">
-    <!-- Texto general -->
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Título -->
     <div class="max-w-4xl mx-auto mb-12">
       <h2 class="text-3xl md:text-4xl font-medium text-black text-center">
-        Modelo de Licenciamiento Flexible
+        Modelo de licenciamiento flexible
       </h2>
     </div>
   </div>
 
-    <!-- Línea con círculos -->
-   <!-- Línea con círculos -->
-  <!-- Línea con círculos centrados respecto a pantalla -->
-  <div class="relative w-full mb-12">
-    <!-- Línea negra a todo lo ancho -->
-    <div class="absolute top-1/2 left-0 right-0 h-[2px] bg-black -translate-y-1/2 z-0"></div>
+  <!-- Línea completa con círculos -->
+  <div class="relative w-full mb-20">
+    <!-- Línea negra de ancho completo -->
+    <div class="absolute top-[28px] left-0 w-full h-[2px] bg-black z-0"></div>
 
-    <!-- Círculos centrados -->
-    <div class="relative z-10 flex justify-between items-center max-w-5xl mx-auto px-6 md:px-0">
-  <div class="relative z-10 w-10 h-10 rounded-full mx-auto" style="background-color: #2836EF;"></div>
-  <div class="relative z-10 w-10 h-10 rounded-full mx-auto" style="background-color: #2836EF;"></div>
-  <div class="relative z-10 w-10 h-10 rounded-full mx-auto" style="background-color: #2836EF;"></div>
-</div>
-
-  </div>
-
-    <!-- Lista de servicios -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-black text-center font-medium text-xl">
-      <div>Sin pagos recurrentes por</br> transacción o volumen.</div>
-      <div>Licencia perpetua o esquema de licenciamiento adaptable al tamaño del cliente.</div>
-      <div>Ahorro frente a </br>integraciones a través de terceros o agregadores.</div>
+    <!-- Círculos y textos -->
+    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-6 md:px-0 text-center">
+      <!-- Opción 1 -->
+      <div class="flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full"
+             style="background-color: #2836EF; box-shadow: 0 0 8px #222222;"></div>
+        <p class="mt-6 text-black font-medium text-xl">
+          Sin pagos recurrentes por<br>transacción o volumen.
+        </p>
+      </div>
+      <!-- Opción 2 -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 rounded-full"
+             style="background-color: #2836EF; box-shadow: 0 0 8px #222222;"></div>
+        <p class="mt-6 text-black font-medium text-xl">
+          Licencia perpetua o esquema de licenciamiento adaptable al tamaño del cliente.
+        </p>
+      </div>
+      <!-- Opción 3 -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 rounded-full"
+             style="background-color: #2836EF; box-shadow: 0 0 8px #222222;"></div>
+        <p class="mt-6 text-black font-medium text-xl">
+          Ahorro frente a<br>integraciones a través de terceros o agregadores.
+        </p>
+      </div>
     </div>
-
   </div>
 </section>
+
+
 <section class="bg-white px-6 py-24 md:px-12">
-  <!-- Título principal -->
   <div class="max-w-4xl mx-auto text-start mb-16">
-    <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
-      Maximizamos Tu Inversión en SPEI
-    </h2>
-    <p class="text-lg text-black font-medium">
-      En Hermes, nos enfocamos en lo que realmente importa: abrir puertas a nuevas oportunidades para tu institución, optimizando cada aspecto de tu integración con SPEI.
-    </p>
+    <SpreadReveal client:visible>
+      <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
+        Maximizamos tu inversión en SPEI®
+      </h2>
+      <p class="text-lg text-black font-medium">
+        En Hermes, nos enfocamos en lo que realmente importa: abrir puertas a nuevas oportunidades para tu institución, optimizando cada aspecto de tu integración con SPEI®.
+      </p>
+    </SpreadReveal>
   </div>
 
-  <!-- Caja general con tarjetas -->
   <div class="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-md p-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Tarjeta 1 -->
-      <div class="flex flex-col items-start gap-3">
-        <div class="flex items-center gap-3">
-          <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
-          <p class="font-semibold text-black">Cobertura Total para Nuevos Participantes</p>
-        </div>
-        <p class="text-sm text-black pl-6">
-          Desde el asesoramiento inicial hasta la certificación y auditorías de seguridad, te acompañamos en cada paso del proceso.
-        </p>
-      </div>
 
-      <!-- Tarjeta 2 -->
-      <div class="flex flex-col items-start gap-3">
-        <div class="flex items-center gap-3">
-          <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
-          <p class="font-semibold text-black">Consultoría </br>Personalizada</p>
+      <SpreadReveal delay={0} client:visible>
+        <div class="flex flex-col items-start gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
+            <p class="font-semibold text-black">Cobertura Total para Nuevos Participantes</p>
+          </div>
+          <p class="text-sm text-black pl-6">
+            Desde el asesoramiento inicial hasta la certificación y auditorías de seguridad, te acompañamos en cada paso del proceso.
+          </p>
         </div>
-        <p class="text-sm text-black pl-6">
-          Ofrecemos un servicio eficiente y enfocado en resultados que se adapta a las necesidades específicas de tu empresa.
-        </p>
-      </div>
+      </SpreadReveal>
 
-      <!-- Tarjeta 3 -->
-      <div class="flex flex-col items-start gap-3">
-        <div class="flex items-center gap-3">
-          <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
-          <p class="font-semibold text-black">Escalabilidad </br>y Flexibilidad</p>
+      <SpreadReveal delay={200} client:visible>
+        <div class="flex flex-col items-start gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
+            <p class="font-semibold text-black">Consultoría </br>Personalizada</p>
+          </div>
+          <p class="text-sm text-black pl-6">
+            Ofrecemos un servicio eficiente y enfocado en resultados que se adapta a las necesidades específicas de tu empresa.
+          </p>
         </div>
-        <p class="text-sm text-black pl-6">
-          Nuestra solución es adaptable, permitiendo ajustes rápidos sin afectar la continuidad de tu operación financiera.
-        </p>
-      </div>
+      </SpreadReveal>
+
+      <SpreadReveal delay={400} client:visible>
+        <div class="flex flex-col items-start gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-3.5 h-3.5 rounded-full bg-[#2836EF] shrink-0"></div>
+            <p class="font-semibold text-black">Escalabilidad </br>y Flexibilidad</p>
+          </div>
+          <p class="text-sm text-black pl-6">
+            Nuestra solución es adaptable, permitiendo ajustes rápidos sin afectar la continuidad de tu operación financiera.
+          </p>
+        </div>
+      </SpreadReveal>
 
     </div>
   </div>
 </section>
 
+
 <div class="relative w-full flex justify-center items-center mt-20 px-6">
-  <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] flex items-center justify-center">
+  <div class="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] flex items-center justify-center">
 
-    <!-- Círculo con contorno degradado y interior transparente -->
-   <div class="absolute w-full h-full z-10 rounded-full flex items-center justify-center">
-        <div class="w-full h-full rounded-full" style="background: conic-gradient(#000, #2836EF"></div>
-        <div class="absolute w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full bg-white"></div>
-      </div>
-
-    <!-- Texto centrado -->
-    <div class="z-20 text-center px-6">
-      <h3 class="md:text-lg font-medium text-black leading-snug">
-        Nuestras <br />soluciones:
-      </h3>
+    <!-- Círculo con contorno degradado -->
+    <div class="absolute w-full h-full z-0 rounded-full flex items-center justify-center">
+      <div class="w-full h-full rounded-full" style="background: conic-gradient(#000, #2836EF);"></div>
+      <div class="absolute w-[calc(100%-12px)] h-[calc(100%-12px)] rounded-full bg-white"></div>
     </div>
 
-    <!-- Etiquetas alrededor -->
-    <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+    <!-- Texto central -->
+    <div class="z-20 text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-medium text-black leading-snug">
+        Nuestras <br />soluciones
+      </h2>
+    </div>
+
+    <!-- Etiquetas -->
+    <div class="absolute inset-0 flex justify-center items-center pointer-events-none z-20">
       <div class="relative w-full h-full">
 
         <!-- Top -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             Cifrado de archivos</div>
+        <div class="absolute top-[-20px] left-1/2 transform -translate-x-1/2 pointer-events-auto">
+          <div class="etiqueta">Cifrado de archivos</div>
         </div>
 
         <!-- Top right -->
-        <div class="absolute top-[12%] right-[0%] pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Gateway SPE</div>
+        <div class="absolute top-[10%] right-[-30px] pointer-events-auto">
+          <div class="etiqueta">Gateway SPEI®</div>
         </div>
 
         <!-- Right -->
-        <div class="absolute top-35 -right-30 -translate-y-1/2 pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[60px]">
-               Gateway SPEI Administrado<br />(Conexión a SPEI <br />en nube GCP)
-          </div>
+        <div class="absolute top-1/2 right-[-70px] transform -translate-y-1/2 pointer-events-auto">
+          <div class="etiqueta">Consultoría SPEI® en general</div>
         </div>
 
         <!-- Bottom right -->
-        <div class="absolute bottom-[12%] right-[0%] pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Core Transaccional</div>
+        <div class="absolute bottom-[10%] right-[-30px] pointer-events-auto">
+          <div class="etiqueta">Core Transaccional</div>
         </div>
 
         <!-- Bottom -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-auto z-300">
-          <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             Transmisor de dinero</div>
+        <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 pointer-events-auto">
+          <div class="etiqueta">Transmisor de dinero</div>
         </div>
 
         <!-- Bottom left -->
-        <div class="absolute bottom-[12%] -left-20 pointer-events-auto z-300">
-         <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Consultoría en proceso<br />de certificación ante Banxico
-          </div>
+        <div class="absolute bottom-[10%] left-[-30px] pointer-events-auto">
+          <div class="etiqueta text-left">Consultoría en proceso<br />de certificación ante Banxico</div>
         </div>
 
         <!-- Left -->
-        <div class="absolute top-1/2 -left-35 -translate-y-1/2 pointer-events-auto z-300">
-        <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Consultoría SPEI: Workshop<br />introducción al SPEI (3 sesiones)
-          </div>
+        <div class="absolute top-1/2 left-[-80px] transform -translate-y-1/2 pointer-events-auto">
+          <div class="etiqueta text-left">Consultoría SPEI® : Workshop introducción al SPEI®</div>
         </div>
 
         <!-- Top left -->
-        <div class="absolute top-[12%] -left-20 pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Consultoría SPEI: Assesment<br />SPEI (evaluación inicial)
-          </div>
-        </div>
-
-        <!-- Extra label (centro-izquierda superior) -->
-        <div class="absolute top-[57%] left-[79%] pointer-events-auto z-300">
-           <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-             
-            Consultoría SPEI en general
-          </div>
+        <div class="absolute top-[10%] left-[-30px] pointer-events-auto">
+          <div class="etiqueta text-left">Consultoría SPEI®: Assesment<br />SPEI® (evaluación inicial)</div>
         </div>
 
       </div>
@@ -326,107 +318,125 @@ fraseHero={[
 
 <!-- Industrias con íconos tipo botón horizontal -->
 
-
-
- <section class="bg-white px-6 py-24 md:px-12">
+<section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-5xl mx-auto text-center mb-12">
     <h2 class="text-3xl md:text-4xl font-medium text-black">Industrias a las que aplicamos</h2>
   </div>
 
-  <!-- Contenedor gris -->
+  <!-- Contenedor gris con dos columnas -->
   <div class="bg-gray-100 rounded-2xl p-8 max-w-5xl mx-auto">
-    <div class="flex flex-col items-center gap-6">
+    <div class="flex flex-col md:flex-row items-center md:items-center gap-8">
 
-  <!-- Rectángulo con borde azul -->
-<!-- Rectángulo con borde azul -->
-
-  
-  <!-- Imagen arriba centrada -->
-  <img src="/Hermes/instituciones.png" alt="Imagen decorativa de industria" class="h-20 object-contain" />
-
-  <!-- Contenedor de industrias -->
-  <div class="flex flex-col items-center gap-6 w-full">
-
-    <!-- Fila 1: 3 columnas -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
-      <div class="flex items-center  rounded-xl p-4  text-center">
-        <p class="text-base font-medium text-black mx-auto">Bancos</p>
+      <!-- Columna izquierda: imagen -->
+      <div class="flex-shrink-0 flex justify-center w-full md:w-1/3">
+        <img src="/Hermes/gobierno-blue.png" alt="Imagen decorativa de industria" class="h-32 object-contain" />
       </div>
-      <div class="flex items-center  rounded-xl p-4   text-center">
-        <p class="text-base font-medium text-black mx-auto">SOFOMES</p>
-      </div>
-      <div class="flex items-center  rounded-xl p-4 text-center">
-        <p class="text-base font-medium text-black mx-auto">SOFIPOS</p>
-      </div>
-    </div>
 
-    <!-- Fila 2: 2 columnas centradas -->
-    <div class="flex flex-wrap justify-center gap-6">
-      <div class="flex items-center rounded-xl p-4 text-center">
-        <p class="text-base font-medium text-black mx-auto">Caja de Ahorro</p>
-      </div>
-      <div class="flex items-center rounded-xl p-4 text-center">
-        <p class="text-base font-medium text-black mx-auto">Fintechs</p>
+      <!-- Columna derecha: texto + tarjetas -->
+      <div class="flex flex-col gap-6 w-full md:w-2/3">
+        <!-- Frase -->
+        <p class="text-lg font-medium text-black text-center md:text-start">
+          Cualquier entidad financiera que quiera conectarse al SPEI<sup>®</sup>.
+        </p>
+
+        <!-- Contenedor de industrias -->
+        <div class="flex flex-col items-center md:items-start gap-6 w-full">
+
+          <!-- Fila 1: 3 columnas -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-4">
+            <div class="flex items-center bg-white rounded-xl p-4 text-center shadow">
+              <p class="text-base font-medium text-black mx-auto">Bancos</p>
+            </div>
+            <div class="flex items-center bg-white rounded-xl p-4 text-center shadow">
+              <p class="text-base font-medium text-black mx-auto">SOFOMES</p>
+            </div>
+            <div class="flex items-center bg-white rounded-xl p-4 text-center shadow">
+              <p class="text-base font-medium text-black mx-auto">SOFIPOS</p>
+            </div>
+          </div>
+
+          <!-- Fila 2: tarjetas intercaladas y centradas -->
+          <div class="flex justify-evenly w-full gap-4">
+            <!-- Tarjeta 1 -->
+            <div class="flex items-center bg-white rounded-xl p-4 text-center shadow w-full max-w-[200px]">
+              <p class="text-base font-medium text-black mx-auto">Caja de Ahorro</p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="flex items-center bg-white rounded-xl p-4 text-center shadow w-full max-w-[200px]">
+              <p class="text-base font-medium text-black mx-auto">Fintechs</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
-    </div>
 </section>
 
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-4xl mx-auto text-start mb-8">
-    <h2 class="text-3xl md:text-4xl font-medium text-[#22222] mb-2">
-      Si ya Eres Participante y Buscas Migrar
-    </h2>
-    <p class="text-black text-ls ">
-      Contamos Con:
-    </p>
+    <MotionFadeIn client:visible>
+      <h2 class="text-3xl md:text-4xl font-medium text-[#222222] mb-2">
+        Si ya Eres Participante del SPEI<sup>®</sup> y Buscas Migrar
+      </h2>
+    </MotionFadeIn>
+    <MotionFadeIn delay={0.2} client:visible>
+      <p class="text-black text-lg">Contamos Con:</p>
+    </MotionFadeIn>
   </div>
 
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-8">
     <!-- Bloque 1 -->
     <div class="flex flex-col items-center w-full md:w-1/3 text-start">
-      <img
-        src="/Hermes/54.png"
-        alt="Ícono APIs"
-        class="h-30 w-80 object-contain mb-4"
-      />
-      <p class="text-black text-base">
-        <span class="font-semibold">APIs Modernas y Flexibles:</span> Facilitan la integración con tus sistemas existentes (ERP, Core Bancario, etc.)
-      </p>
+      <MotionFadeIn delay={0.3} client:visible>
+        <img
+          src="/Hermes/54.png"
+          alt="Ícono APIs"
+          class="h-30 w-80 object-contain mb-4"
+        />
+        <p class="text-black text-base">
+          <span class="font-semibold">APIs Modernas y Flexibles:</span> Facilitan la integración con tus sistemas existentes (ERP, Core Bancario, etc.)
+        </p>
+      </MotionFadeIn>
     </div>
 
     <!-- Bloque 2 -->
     <div class="flex flex-col items-center w-full md:w-1/3 text-start">
-      <img
-        src="/Hermes/53.png"
-        alt="Ícono Seguridad"
-        class="h-30 w-80 object-contain mb-4"
-      />
-      <p class="text-black text-base">
-        <span class="font-semibold">Módulos de Seguridad Robustos:</span> Cumplimiento con los requisitos de HSM, cifrado y firmado digital.
-      </p>
+      <MotionFadeIn direction="down" delay={0.4} client:visible>
+        <img
+          src="/Hermes/53.png"
+          alt="Ícono Seguridad"
+          class="h-30 w-80 object-contain mb-4"
+        />
+        <p class="text-black text-base">
+          <span class="font-semibold">Módulos de Seguridad Robustos:</span> Cumplimiento con los requisitos de HSM, cifrado y firmado digital.
+        </p>
+      </MotionFadeIn>
     </div>
 
     <!-- Bloque 3 -->
     <div class="flex flex-col items-center w-full md:w-1/3 text-start">
-      <img
-        src="/Hermes/52.png"
-        alt="Ícono Gateway"
-        class="h-30 w-80 object-contain mb-4"
-      />
-      <p class="text-black text-base">
-        <span class="font-semibold">Gateway SPEI Administrado (Cloud con GCP):</span> </br>Idónea si buscas opciones de conectividad innovadoras.
-      </p>
+      <MotionFadeIn delay={0.5} client:visible>
+        <img
+          src="/Hermes/52.png"
+          alt="Ícono Gateway"
+          class="h-30 w-80 object-contain mb-4"
+        />
+        <p class="text-black text-base">
+          <span class="font-semibold">Gateway SPEI<sup>®</sup> Administrado (Cloud con GCP):</span><br />
+          Idónea si buscas opciones de conectividad innovadoras.
+        </p>
+      </MotionFadeIn>
     </div>
   </div>
 </section>
 
+
 <section class="bg-white px-6 py-24 md:px-12 ">
   <div class="max-w-4xl mx-auto text-start mb-16">
     <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
-      Logra una Solución <br /> Tecnológica Avanzada
+      Logra una solución <br /> tecnológica avanzada
     </h2>
     <p class="text-black text-base md:text-base">
       Al elegir Hermes, tu institución no solo obtiene una solución tecnológica de vanguardia,
@@ -435,9 +445,9 @@ fraseHero={[
   </div>
 
   <!-- Contenedor de los 3 bloques alineado al texto -->
-  <div class="max-w-4xl mx-auto space-y-10">
+  <div class="max-w-4xl mx-auto space-y-10 z-10">
     <!-- Bloque 1 -->
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-6 z-20">
       <div class="border border-gray-300 w-25 h-15 flex items-center justify-center bg-[#f5f5f5] text-[#2836EF] rounded-md flex-shrink-0">
         <img
           src="/Hermes/10.png"
@@ -488,52 +498,49 @@ fraseHero={[
     </div>
   </div>
 </section>
+
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-4xl mx-auto text-start mb-16">
     <h2 class="text-3xl md:text-4xl font-medium text-black mb-4">
-      Más de Una Década en el Sector Financiero
+      Más de una década en el sector financiero
     </h2>
     <p class="text-lg text-black font-medium text-start max-w-3x1">
       Con más de 14 años, Hermes cuenta con una trayectoria sólida que garantiza la confiabilidad y la innovación en cada solución que ofrecemos.
     </p>
   </div>
 
-  <div class="relative max-w-3xl mx-auto space-y-20">
-    <!-- Línea vertical extendida -->
-    <div class="absolute top-0 left-5 w-0.5 h-[110%] bg-[#2836EF]"></div>
-
-    <!-- Circulito final alineado con la línea -->
-    <div class="absolute -bottom-33 left-[14px] w-4 h-4 bg-[#2836EF] rounded-full"></div>
+  <div class="relative max-w-3xl mx-auto space-y-20 pb-28"> <!-- padding-bottom para que la línea tenga espacio -->
+    <ScrollLine client:visible />
 
     <!-- Punto 1 -->
-    <div class="relative pl-20">
-      <div class="absolute -left-2 top-7 -translate-y-1/2 w-14 h-14 border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center text-[#2836EF]">
+    <div class="flex items-start gap-6 pl-5">
+      <div class="min-w-[56px] min-h-[56px] border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center">
         <img src="/Hermes/inicio.png" alt="2011" class="h-10 w-10 object-contain" />
       </div>
       <div>
         <p class="text-base font-semibold text-black">2011: El Inicio del Viaje</p>
         <p class="text-sm text-black">
-          Comenzamos nuestra misión conectando participantes al SPEI, sentando las bases de nuestra experiencia.
+          Comenzamos nuestra misión conectando participantes al SPEI<sup>®</sup>.
         </p>
       </div>
     </div>
 
     <!-- Punto 2 -->
-    <div class="relative pl-20">
-      <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center text-[#2836EF]">
+    <div class="flex items-start gap-6 pl-5">
+      <div class="min-w-[56px] min-h-[56px] border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center">
         <img src="/Hermes/gateway.png" alt="2018" class="h-10 w-10 object-contain" />
       </div>
       <div>
-        <p class="text-base font-semibold text-black">2018: Nace Hermes Gateway</p>
+        <p class="text-base font-semibold text-black">2019: Relanzamiento de Hermes</p>
         <p class="text-sm text-black">
-          Lanzamiento de Hermes, con protección de transacciones, datos y sistemas mediante criptografía de última generación.
+          Nueva versión: Hermes Gateway, con protección de transacciones, datos y sistemas mediante criptografía de última generación.
         </p>
       </div>
     </div>
 
     <!-- Punto 3 -->
-    <div class="relative pl-20">
-      <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center text-[#2836EF]">
+    <div class="flex items-start gap-6 pl-5">
+      <div class="min-w-[56px] min-h-[56px] border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center">
         <img src="/Hermes/alianza.png" alt="2024" class="h-10 w-10 object-contain" />
       </div>
       <div>
@@ -545,8 +552,8 @@ fraseHero={[
     </div>
 
     <!-- Punto 4 -->
-    <div class="relative pl-20">
-      <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center text-[#2836EF]">
+    <div class="flex items-start gap-6 pl-5">
+      <div class="min-w-[56px] min-h-[56px] border-2 border-[#2836EF] bg-white rounded-md flex items-center justify-center">
         <img src="/Hermes/seguro.png" alt="2025" class="h-10 w-10 object-contain" />
       </div>
       <div>
@@ -556,6 +563,8 @@ fraseHero={[
         </p>
       </div>
     </div>
+
+    <AnimatedCircle client:visible />
   </div>
 </section>
 

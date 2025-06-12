@@ -2,7 +2,28 @@
 import Layout from '../../layouts/Layout.astro'
 import LandingUnidad from '../../components/LandingUnidad.astro'
 import LogoCarousel from '../../components/LogoCarousel.jsx'; // Asegúrate de importarlo
+import GrowCircleIndustria from '../../components/movimiento/GrowCircleIndustria.jsx'
+import MotionFadeIn from '../../components/movimiento/MotionFadeIn.jsx'
 
+const columna1 = [
+  "Horus",
+  "CryptoFin",
+  "HSMs, propósito general y financiero"
+];
+
+const columna2 = [
+  "Plataforma Key Management",
+  "Encriptor de Red (HSE)",
+  "Token móvil",
+  "IAM / CIAM"
+];
+
+const columna3 = [
+  "WAF",
+  "Advanced Bot Protection",
+  "API Security",
+  "DDoS Protection"
+];
 const logosempresas = [
 "/Conecta/01_Banorte.png",
 "/Conecta/02_Invex.png",
@@ -31,12 +52,12 @@ const casillas = [
 <Layout>
   
 <LandingUnidad
-  imagenHero="/Conecta/cripto.png"
+  imagenHero="/Conecta/Header-Conecta-Criptografia.png"
   colorFrase="#800080"
-  textoBoton="Agenda una demo"
+  textoBoton="Conectemos"
   colorBoton="white"
   tituloTarjetas="Nuestras soluciones te ayudan a"
-  fraseSecundaria="Soluciones en cifrado de datos, HSMs y cumplimiento."
+  fraseSecundaria="14 años en la implementación, gestión, soporte y auditoría de infraestructura criptográfica del sector financiero."
   fraseHero={[
     { text: "Simplificamos la protección \nde datos", bold: true },
     { text: " con la tecnología \nmás robusta: HSMs" }
@@ -236,156 +257,87 @@ const casillas = [
 </section>
 
 
-<!-- Sección de soluciones específicas -->
-<!-- Soluciones de Seguridad en forma de rectángulo -->
-<div class="relative w-full flex justify-center items-center mt-20 px-6">
-  <div class="relative w-[360px] h-[240px] md:w-[600px] md:h-[320px] flex items-center justify-center">
-    
-    <!-- Rectángulo con contorno degradado -->
-    <div class="absolute w-full h-full z-10 rounded-3xl" style="
-      background: linear-gradient(90deg, black, purple);
-      -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      padding: 6px;
-      box-sizing: border-box;
-    "></div>
-
-    <!-- Título centrado -->
-    <div class="z-20 text-center text-black text-2xl md:text-2xl font-medium">
-      Protegemos lo<br> más importante 
-    </div>
-
-    <!-- Botones alrededor del rectángulo -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="relative w-full h-full">
-
-        <!-- Superior centro -->
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Horus</div>
-        </div>
-
-        <!-- Esquina superior derecha -->
-        <div class="absolute -top-3 right-20 translate-x-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">CryptoFin</div>
-        </div>
-
-        <!-- Centro derecha -->
-        <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 pointer-events-auto w-32 text-center z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">HSMs, propósito general y financiero</div>
-        </div>
-
-        <!-- Esquina inferior derecha -->
-        <div class="absolute bottom-10 right-0 translate-x-1/2 pointer-events-auto text-center w-40 z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Plataforma Key Management</div>
-        </div>
-
-        <!-- Inferior centro -->
-        <div class="absolute -bottom-4 left-23 -translate-x-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Encriptor de Red <br>(HSE)</div>
-        </div>
-
-        <!-- Esquina inferior izquierda -->
-        <div class="absolute bottom-13 left-0 -translate-x-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Token móvil</div>
-        </div>
-
-        <!-- Centro izquierda -->
-        <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">IAM/CIAM</div>
-        </div>
-
-        <!-- Esquina superior izquierda -->
-        <div class="absolute -top-3 left-20 -translate-x-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">WAF</div>
-        </div>
-
-        <!-- Entre izquierda y superior -->
-        <div class="absolute top-[20%] left-[2%] -translate-x-1/2 pointer-events-auto text-center z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">Advanced Bot <br>Protection</div>
-        </div>
-
-        <!-- Entre derecha y superior -->
-        <div class="absolute top-[20%] right-[0%] translate-x-1/2 pointer-events-auto text-center z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">API Security</div>
-        </div>
-
-        <!-- Inferior centro-izquierda -->
-        <div class="absolute -bottom-5 -right-3 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
-          <div class="bg-white text-xs md:text-sm rounded-xl px-3 py-1 shadow">DDoS Protection</div>
-        </div>
-
-      </div>
-    </div>
-
+<section class="max-w-5xl mx-auto px-6 py-20 flex flex-col lg:flex-row gap-12">
+  <!-- Título -->
+  <div class="lg:w-1/3 flex items-center justify-center">
+    <h2 class="text-3xl font-medium text-center text-black">
+      Fortalece tu seguridad digital con nuestras soluciones avanzadas
+    </h2>
   </div>
-</div>
- 
-<!-- Industrias con íconos tipo botón horizontal -->
+
+  <!-- Columnas -->
+  <div class="lg:w-2/3 flex gap-6 items-stretch">
+    <!-- Columna 1 -->
+    <div class="flex flex-col gap-6 flex-1 justify-center">
+      {columna1.map((item, i) => (
+       <MotionFadeIn client:visible direction="up" delay={0.1}>
+          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+            {item}
+          </div>
+        </MotionFadeIn>
+      ))}
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="flex flex-col gap-6 flex-1">
+      {columna2.map((item, i) => (
+        <MotionFadeIn client:visible direction="down" delay={0.1}>
+          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+            {item}
+          </div>
+        </MotionFadeIn>
+      ))}
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="flex flex-col gap-6 flex-1">
+      {columna3.map((item, i) => (
+        <MotionFadeIn client:visible direction="up" delay={0.1}>
+          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+            {item}
+          </div>
+        </MotionFadeIn>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-5xl mx-auto text-center mb-12">
     <h2 class="text-3xl md:text-4xl font-medium text-black">Industrias a las que aplicamos</h2>
   </div>
 
-  <!-- Contenedor gris -->
-  <div class="bg-gray-100 rounded-2xl p-8 max-w-5xl mx-auto">
+  <div class="bg-[#f5f5f5] rounded-2xl p-8 max-w-5xl mx-auto">
     <div class="flex flex-col items-center gap-6">
-
       <!-- Fila 1 -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
-        <div class="flex items-center bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/image.png" alt="Financiera" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Financiera</p>
-        </div>
-        <div class="flex items-center bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/salud.png" alt="Salud" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Salud</p>
-        </div>
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/Aseguradoras.png" alt="Aseguradoras" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Aseguradoras</p>
-        </div>
+        <GrowCircleIndustria client:visible imagen="/Conecta/Financiera-purple.png" titulo="Financiera" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/Industria_salud-purple.png" titulo="Salud" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/Aseguradoras-purple.png" titulo="Aseguradoras" />
       </div>
 
       <!-- Fila 2 -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/ecommerce.png" alt="E-commerce" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">E-commerce</p>
-        </div>
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/automovilistica.png" alt="Automovilistica" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Automotriz</p>
-        </div>
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/parthenon.png" alt="Gobierno" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Gobierno</p>
-        </div>
+        <GrowCircleIndustria client:visible imagen="/Conecta/ecommerce-purple.png" titulo="E-commerce" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/automovilistica-purple.png" titulo="Automotriz" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/gobierno-purple.png" titulo="Gobierno" />
       </div>
 
       <!-- Fila 3 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/circuit-board.png" alt="Tecnologia" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Tecnológica</p>
-        </div>
-        <div class="flex items-center  bg-[#f5f5f5] rounded-xl p-4">
-          <img src="/Conecta/broadcast.png" alt="Telecomunicaciones" class="h-10 w-10 object-contain mr-4" />
-          <p class="text-base font-medium text-black">Telecomunicaciones</p>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6">
+        <GrowCircleIndustria client:visible imagen="/Conecta/Tecnologica-purple.png" titulo="Tecnológica" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/Telecomunicaciones-purple.png" titulo="Telecomunicaciones" />
+        <GrowCircleIndustria client:visible imagen="/Conecta/retail-purple.png" titulo="Retail" />
       </div>
-
     </div>
   </div>
 </section>
 
 
+
   
 
-  </div>
-</section>
-
+  
 
 </Layout>

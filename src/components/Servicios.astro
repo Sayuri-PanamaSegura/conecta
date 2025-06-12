@@ -1,4 +1,14 @@
 ---
+import LogoCarousel from "../components/LogoCarousel.jsx";
+const logosempresas = [
+"/alianzas/01_GoogleCloud.png" ,
+"/alianzas/02_Thales.png" ,
+"/alianzas/03_Utimaco.png" ,
+"/alianzas/04_Entrust.png",
+"/alianzas/tese.png",
+"/alianzas/05_FintechMex.png" ,
+    "/alianzas/06_AMSOFIPO.png" 
+];
 // src/pages/index.astro (o donde tengas tu sección de servicios)
 import ServiciosCards from "../components/ServiciosCards.jsx";
 ---
@@ -44,15 +54,12 @@ import ServiciosCards from "../components/ServiciosCards.jsx";
   </div>
 </div>
 
+ 
 <!-- Sección de logos de alianzas en franja blanca -->
 <section class="bg-white px-6 py-12">
-  <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
-    <!-- Ajusta los paths de imagen si es necesario -->
-    <img src="/alianzas/01_GoogleCloud.png" alt="Google Cloud" class="w-full max-h-20 object-contain mx-auto" />
-    <img src="/alianzas/02_Thales.png" alt="Thales" class="w-full max-h-20 object-contain mx-auto" />
-    <img src="/alianzas/03_Utimaco.png" alt="Utimaco" class="w-full max-h-20 object-contain mx-auto" />
-    <img src="/alianzas/04_Entrust.png" alt="Entrust" class="w-full max-h-20 object-contain mx-auto" />
-    <img src="/alianzas/05_FintechMex.png" alt="Fintech Mex" class="w-full max-h-20 object-contain mx-auto" />
-    <img src="/alianzas/06_AMSOFIPO.png" alt="AMSOFIPO" class="w-full max-h-20 object-contain mx-auto" />
+
+
+        <LogoCarousel logos={logosempresas}  client:only="react" />
+
   </div>
 </section>

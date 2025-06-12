@@ -15,7 +15,7 @@ export default function LogosSwiper({
     <div className="py-16">
       {/* Título */}
       <div className="max-w-6xl mx-auto text-center mb-6">
-        <h2 className="text-lg font-medium text-gray-800">{title}</h2>
+        <h2 className="text-lg font-medium text-black">{title}</h2>
       </div>
 
       <div className="max-w-6xl mx-auto">
@@ -36,13 +36,17 @@ export default function LogosSwiper({
         >
           {logos.map((logoSrc, index) => (
             <SwiperSlide key={index}>
-              <div className="flex items-center justify-center h-28 w-full">
-                <img
-                  src={logoSrc}
-                  alt={`Logo ${index}`}
-                  className="max-h-20 w-auto object-contain"
-                />
-              </div>
+            <div className="flex items-center justify-center h-28 w-full">
+  <div className="h-24 w-40 flex items-center justify-center">
+    <img
+      src={logoSrc}
+      alt={`Logo ${index}`}
+      className="max-h-full max-w-full object-contain"
+    />
+  </div>
+</div>
+
+
             </SwiperSlide>
           ))}
         </Swiper>

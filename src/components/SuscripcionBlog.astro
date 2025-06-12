@@ -1,16 +1,61 @@
+---
+import Parser from 'rss-parser';
+const parser = new Parser({
+  customFields: {
+    item: ['content:encoded']
+  }
+});
+
+function extractImage(html) {
+  const match = html?.match(/<img[^>]+src="([^">]+)"/);
+  return match ? match[1] : null;
+}
+
+const feed = await parser.parseURL('https://conecta.mx/blog/rss.xml');
+const posts = feed.items.slice(0, 3); // SOLO 3 POSTS
+---
 <section class="bg-gray-300 py-20 px-6">
-<div class="max-w-2xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4">
-      Conecta con nuestro Blog
-    </h2>
+  <div class="max-w-5xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Conecta con nuestro Blog</h2>
     <p class="text-gray-600 mb-8">
       Explora nuestras entradas más recientes. Nosotros te ayudamos a mantener el paso con contenido claro, directo y con propósito.
-Suscríbete y lleva la delantera.</p>
+      Suscríbete y lleva la delantera.
+    </p>
 
+    <!-- Blog cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {posts.map(post => {
+        const image = post.enclosure?.url ?? extractImage(post['content:encoded']) ?? 'https://via.placeholder.com/600x400?text=Blog+Conecta';
+        return (
+          <article class="bg-white rounded-xl shadow-md overflow-hidden transition hover:scale-[1.02]">
+            <a href={post.link} target="_blank" rel="noopener noreferrer">
+              <img 
+                src={image}
+                alt={post.title}
+                class="w-full h-40 object-cover"
+              />
+              <div class="p-4 text-left">
+                <h3 class="text-base font-semibold text-gray-800 mb-1">{post.title}</h3>
+                <p class="text-sm text-gray-600 line-clamp-3">{post.contentSnippet}</p>
+                <time class="text-xs text-gray-400 mt-2 block">
+                  {new Date(post.pubDate).toLocaleDateString('es-MX', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Formulario -->
     <form
       action="https://formsubmit.co/marketing@conecta.mx"
       method="POST"
-      class="flex flex-col sm:flex-row items-center gap-4"
+      class="flex flex-col sm:flex-row items-center gap-4 max-w-2xl mx-auto"
     >
       <input 
         type="email" 
@@ -20,12 +65,11 @@ Suscríbete y lleva la delantera.</p>
         class="w-full sm:flex-1 p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 transition" 
       />
 
-      <!-- Botón con efecto de llenado -->
       <button 
         type="submit" 
         class="relative overflow-hidden text-black font-semibold py-3 px-8 rounded-full bg-white group transition"
       >
-        <span class="relative z-10">Sumate</span>
+        <span class="relative z-10">Súmate</span>
         <span class="absolute inset-0 bg-gray-300 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
       </button>
 
