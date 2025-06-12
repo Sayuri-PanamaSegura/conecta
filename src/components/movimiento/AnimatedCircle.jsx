@@ -16,7 +16,7 @@ export default function AnimatedCircle() {
     <motion.div
       ref={ref}
       style={{ scale, opacity }}
-      className="absolute bottom-0 left-[45px] w-4 h-4 bg-[#2836EF] rounded-full"
+      className="absolute bottom-33 left-[45px] w-4 h-4 bg-[#2836EF] rounded-full"
     />
   );
 }

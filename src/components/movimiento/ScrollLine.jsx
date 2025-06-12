@@ -12,7 +12,7 @@ export default function ScrollLine() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div ref={ref} className="absolute top-0 left-13 w-0.5 h-full bg-gray-200 "style={{ zIndex: 0 }}>
+    <div ref={ref} className="absolute top-0 left-13 w-0.5 h-135 bg-gray-200 "style={{ zIndex: 0 }}>
       
       <motion.div
         style={{ height }}
