@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function BotonFlotanteAnimado({
   texto = "Agenda demo",
   href = "#",
-  color = "#800080",
+  color = "#f5f5f5",
 }) {
   const [hovered, setHovered] = useState(false);
 
