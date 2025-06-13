@@ -25,7 +25,7 @@ const servicios = [
   },
 ];
 
-const colores = ['#800080', '#4688F1'];
+const colores = ['#800080','#2836EF', '#4688F1'];
 
 export default function ServiciosCards() {
   const [activo, setActivo] = useState(null);
