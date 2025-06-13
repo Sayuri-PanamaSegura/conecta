@@ -3,12 +3,16 @@
 
 import Layout from "../../layouts/Layout.astro";
 import SpreadReveal from '../../components/movimiento/SpreadReveal.jsx';
-
+import MotionFadeIn from "../../components/movimiento/MotionFadeIn";
+import GrowCircle from "../../components/movimiento/GrowCircle";
+import ScrollReveal from "../../components/movimiento/ScrollReveal";
+import AnimatedButton from "../../components/movimiento/AnimatedButton";
 const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústala
 ---
 
 <Layout>
   <section class="bg-[#FAFAFA] pt-24 px-6 py-24 md:px-10">
+    <ScrollReveal client:visible>
     <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
 
       <!-- Texto izquierdo -->
@@ -19,6 +23,7 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
        <p class="text-lg font-light text-black leading-relaxed">
   En <span class="font-semibold">Conecta</span>, entendemos que la <span class="font-semibold">seguridad y la eficiencia son fundamentales </span> para cualquier organización que  confía en la nube. </br> </br>Ofrecemos una <span class="font-semibold">infraestructura robusta y optimizada</span>, </br>asegurando que cada proyecto cumpla con los  <span class="font-semibold"> más altos  estándares de protección de datos y rendimiento</span>.
 </p>
+ <AnimatedButton textoBoton={("Hablemos")} coloresBoton="#4688F1" href="/contacto" client:load />
 
       </div>
 
@@ -28,6 +33,7 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
       </div>
 
     </div>
+    </ScrollReveal>
   </section>
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-4xl mx-auto mb-12">
@@ -36,9 +42,11 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
     <div class="space-y-8">
       <!-- Bloque 1 -->
       <div class="flex gap-4 items-start">
+       <GrowCircle client:visible>
         <div class="flex items-center justify-center w-12 h-12 border-2 border-[#4688F1] rounded-full bg-white shrink-0">
           <img src="/Google/encryption.png" alt="Cifrado" class="w-6 h-6 object-contain" />
         </div>
+        </GrowCircle>
         <div>
           <h3 class="text-base font-semibold text-black mb-1">Cifrado Avanzado</h3>
           <p class="text-sm font-medium text-black leading-relaxed">
@@ -49,9 +57,11 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 
       <!-- Bloque 2 -->
       <div class="flex gap-4 items-start">
+        <GrowCircle client:visible>
         <div class="flex items-center justify-center w-12 h-12 border-2 border-[#4688F1] rounded-full bg-white shrink-0">
           <img src="/Google/cumplimiento.png" alt="Cumplimiento" class="w-6 h-6 object-contain" />
         </div>
+        </GrowCircle>
         <div>
           <h3 class="text-base font-semibold text-black mb-1">Cumplimiento Normativo</h3>
           <p class="text-sm font-medium text-black leading-relaxed">
@@ -62,9 +72,11 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 
       <!-- Bloque 3 -->
       <div class="flex gap-4 items-start">
+        <GrowCircle client:visible>
         <div class="flex items-center justify-center w-12 h-12 border-2 border-[#4688F1] rounded-full bg-white shrink-0">
           <img src="/Google/autenticac.png" alt="Autenticación" class="w-6 h-6 object-contain" />
         </div>
+        </GrowCircle>
         <div>
           <h3 class="text-base font-semibold text-black mb-1">Autenticación y Control de Acceso</h3>
           <p class="text-sm font-medium text-black leading-relaxed">
@@ -75,9 +87,11 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 
       <!-- Bloque 4 -->
       <div class="flex gap-4 items-start">
+        <GrowCircle client:visible>
         <div class="flex items-center justify-center w-12 h-12 border-2 border-[#4688F1] rounded-full bg-white shrink-0">
           <img src="/Google/monitoreo.png" alt="Monitoreo" class="w-6 h-6 object-contain" />
         </div>
+        </GrowCircle>
         <div>
           <h3 class="text-base font-semibold text-black mb-1">Monitoreo y Respuesta a Incidentes</h3>
           <p class="text-sm font-medium text-black leading-relaxed">
@@ -203,23 +217,28 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
     <!-- Google Cloud -->
+     <MotionFadeIn client:visible direction="up" delay={0.1}>
     <div class="bg-[#4688F1] text-white rounded-xl p-6 shadow-lg">
+      
       <h3 class="text-xl font-semibold mb-3">Google Cloud</h3>
       <p class="text-sm leading-relaxed font-light">
         Optimiza tu infraestructura con la escalabilidad y rendimiento de Google Cloud. Desde almacenamiento hasta análisis de datos, te ofrecemos soluciones adaptadas a tu negocio.
       </p>
     </div>
-
+</MotionFadeIn>
  
 
     <!-- Seguridad y Cumplimiento -->
+           <MotionFadeIn client:visible direction="down" delay={0.1}>
     <div class="bg-[#4688F1] text-white rounded-xl p-6 shadow-lg">
+
       <h3 class="text-xl font-semibold mb-3">Seguridad y Cumplimiento</h3>
       <p class="text-sm leading-relaxed font-light">
         Protege información sensible con soluciones avanzadas de cifrado y cumplimiento normativo. Nuestro enfoque garantiza que tus datos estén siempre seguros.
       </p>
     </div>
   </div>
+  </MotionFadeIn>
 </section>
 
 <section class="w-full max-w-4xl mx-auto py-20 px-6 flex justify-center">
@@ -250,47 +269,49 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 
 
 
-
 <section class="bg-white py-24 px-6 md:px-12">
   <div class="max-w-4xl mx-auto text-start mb-12">
     <h2 class="text-3xl md:text-4xl font-medium text-black">Beneficios de Elegir Conecta</h2>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
-<SpreadReveal delay={0} client:visible>
     <!-- Disponibilidad -->
-    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
-      <p class="text-4xl font-bold text-[#4688F1] mb-2">99.9%</p>
-      <p class="text-lg font-semibold text-black mb-2">Disponibilidad</p>
-      <p class="text-sm text-black">
-        Garantizamos una alta disponibilidad de tus servicios, asegurando la continuidad operativa en todo momento.
-      </p>
-    </div>
-</SpreadReveal>
+    <SpreadReveal delay={0} client:visible>
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
+        <p class="text-4xl font-bold text-[#4688F1] mb-2">99.9%</p>
+        <p class="text-lg font-semibold text-black mb-2">Disponibilidad</p>
+        <p class="text-sm text-black flex-grow">
+          Garantizamos una alta disponibilidad de tus servicios, asegurando la continuidad operativa en todo momento.
+        </p>
+      </div>
+    </SpreadReveal>
+
     <!-- Ahorro de Costos -->
-     <SpreadReveal delay={0} client:visible>
-    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
-      <p class="text-4xl font-bold text-[#4688F1] mb-2">20%</p>
-      <p class="text-lg font-semibold text-black mb-2">Ahorro de Costos</p>
-      <p class="text-sm text-black">
-        Nuestras arquitecturas optimizadas pueden reducir significativamente tus gastos operativos en la nube.
-      </p>
-    </div>
-</SpreadReveal> 
+    <SpreadReveal delay={0} client:visible>
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
+        <p class="text-4xl font-bold text-[#4688F1] mb-2">20%</p>
+        <p class="text-lg font-semibold text-black mb-2">Ahorro de Costos</p>
+        <p class="text-sm text-black flex-grow">
+          Nuestras arquitecturas optimizadas pueden reducir significativamente tus gastos operativos en la nube.
+        </p>
+      </div>
+    </SpreadReveal>
+
     <!-- Conformidad -->
-     <SpreadReveal delay={0} client:visible>
-    <div class="bg-gray-100 rounded-xl p-6 shadow-md">
-      <p class="text-4xl font-bold text-[#4688F1] mb-2">100%</p>
-      <p class="text-lg font-semibold text-black mb-2">Conformidad</p>
-      <p class="text-sm text-black">
-        Cumplimos con las regulaciones más estrictas para proteger tus datos y asegurar la privacidad.
-      </p>
-    </div>
+    <SpreadReveal delay={0} client:visible>
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
+        <p class="text-4xl font-bold text-[#4688F1] mb-2">100%</p>
+        <p class="text-lg font-semibold text-black mb-2">Conformidad</p>
+        <p class="text-sm text-black flex-grow">
+          Cumplimos con las regulaciones más estrictas para proteger tus datos y asegurar la privacidad.
+        </p>
+      </div>
+    </SpreadReveal>
   </div>
-</SpreadReveal>
+
   <!-- Mensaje Final -->
   <div class="max-w-4xl mx-auto mt-12 text-start">
-    <p class="text-base text-blac font-medium leading-relaxed">
+    <p class="text-base text-black font-medium leading-relaxed">
       Nuestro compromiso es asegurar que cada solución en la nube sea segura, eficiente y adaptada a las necesidades específicas de cada empresa, impulsando su crecimiento y competitividad en el mercado actual.
     </p>
   </div>

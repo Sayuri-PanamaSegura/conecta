@@ -2,6 +2,7 @@
 import ScrollReveal from '../components/movimiento/ScrollReveal.jsx';
 import LogoCarousel from "../components/LogoCarousel.jsx";
 import HeroScrollWords from "../components/HeroScrollWords.jsx";
+import AnimatedButton from './movimiento/AnimatedButton';
 
 const logosempresas = [
   "/Homepage/01_Banorte.png",
@@ -35,12 +36,9 @@ const carouselTitle = "Empresas que confían en nosotros";
         cumplimiento, conexión financiera y servicios en la nube.
       </p>
 
-      <a
-        href="/contacto"
-        class="mt-8 inline-block bg-white text-black font-medium px-8 py-3 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-300"
-      >
-        Hablemos
-      </a>
+     <AnimatedButton textoBoton="Hablemos" coloresBoton={["#800080", "#2836EF", "#4688F1"]} href="/contacto"  client:only="react"/>
+
+
 
       <div class="mt-12">
         <div class="max-w-6xl mx-auto">

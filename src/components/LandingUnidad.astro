@@ -1,6 +1,7 @@
 ---
 import ScrollReveal from '../components/movimiento/ScrollReveal.jsx';
 import GrowCircle  from './movimiento/GrowCircle';
+import AnimatedButton from '../components/movimiento/AnimatedButton';
 // Recibimos props flexibles
 const {
   imagenHero = "",
@@ -52,15 +53,8 @@ const {
 
 
   <!-- Botón -->
-  <div class="text-center mb-16">
-    <a
-      href="/contacto"
-      class="inline-block px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition border"
-      style={`background-color: ${colorBoton}; color: black; border-color: ${colorBoton}`}
-    >
-      {textoBoton}
-    </a>
-  </div>
+ <AnimatedButton textoBoton={textoBoton} coloresBoton={colorFrase} href="/contacto" client:load />
+
 
   <!-- Carrusel (si se manda como slot o prop) -->
   <slot name="carrusel" />
@@ -74,8 +68,10 @@ const {
  </ScrollReveal>
   <!-- Título de sección de tarjetas -->
 {tituloTarjetas && (
-  <div class="max-w-4xl mx-auto mb-12">
+
+  <div class="max-w-4xl mx-auto mb-12 mt-20">
     <h2 class="text-3xl md:text-3xl font-medium text-black whitespace-pre-line">
+
       {Array.isArray(tituloTarjetas)
         ? tituloTarjetas.map(part =>
             part.bold

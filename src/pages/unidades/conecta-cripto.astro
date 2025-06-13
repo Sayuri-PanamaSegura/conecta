@@ -30,6 +30,9 @@ const logosempresas = [
 "/Conecta/03_Plata.png",
 "/Conecta/04_Nissan.png",
 "/Conecta/05_Covalto.png",
+"/Conecta/06_Afirme.png",
+"/Conecta/07_Prosa.png",
+"/Conecta/08_Bankaool.png",
 ];
 const carouselTitle = "Empresas que confían en nosotros";
 
@@ -49,7 +52,7 @@ const casillas = [
 ---
 
 
-<Layout>
+<Layout formColor="#800080">
   
 <LandingUnidad
   imagenHero="/Conecta/Header-Conecta-Criptografia.png"
@@ -177,7 +180,6 @@ const casillas = [
     background: linear-gradient(to left, white, #800080 50%, #800080 50%, white);
   }
 </style>
-
 <!-- Capacidades de HSM -->
 <section class="bg-white px-6 py-24 md:px-12">
   <!-- Título -->
@@ -185,93 +187,82 @@ const casillas = [
     <h2 class="text-3xl md:text-4xl font-medium text-black">Nuestros HSMs te ayudan en:</h2>
   </div>
 
-  <!-- Círculo con etiquetas -->
-  <div class="flex justify-center items-center px-6">
-    <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] flex items-center justify-center">
+  <!-- Círculo central -->
+  <div class="w-full flex flex-col items-center justify-center">
+    <div class="relative w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center">
       
-      <!-- Círculo con borde degradado -->
-      <div class="absolute w-full h-full z-10 rounded-full flex items-center justify-center">
+      <!-- Círculo girando con borde degradado -->
+      <div class="absolute w-full h-full z-10 rounded-full flex items-center justify-center animate-spin-slow">
         <div class="w-full h-full rounded-full" style="background: conic-gradient(#000, #800080);"></div>
-        <div class="absolute w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full bg-white"></div>
+        <div class="absolute w-[calc(100%-12px)] h-[calc(100%-12px)] rounded-full bg-white"></div>
       </div>
 
       <!-- Imagen central -->
-      <img src="/hm.png" alt="HSM Icon" class="z-20 w-24 h-24 object-contain" />
+      <img src="/hm.png" alt="HSM Icon" class="z-20 w-20 sm:w-24 h-20 sm:h-24 object-contain" />
 
-      <!-- Etiquetas -->
-      <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <div class="relative w-full h-full">
+      <!-- Etiquetas flotantes (solo en pantallas grandes) -->
+      <div class="absolute inset-0 pointer-events-none hidden sm:flex justify-center items-center">
+        <div class="relative w-full h-full text-[10px] leading-tight">
 
           <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Cifrado de archivos
-            </div>
+            <div class="etiqueta-sm">Cifrado de archivos</div>
           </div>
-
           <div class="absolute top-[15%] left-[85%] -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Cifrado de redes
-            </div>
+            <div class="etiqueta-sm">Cifrado de redes</div>
           </div>
-
           <div class="absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Autenticación
-            </div>
+            <div class="etiqueta-sm">Autenticación</div>
           </div>
-
           <div class="absolute bottom-[15%] left-[85%] -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Gestión de certificados
-            </div>
+            <div class="etiqueta-sm">Gestión de certificados</div>
           </div>
-
           <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Cifrado de SPEI
-            </div>
+            <div class="etiqueta-sm">Cifrado de SPEI</div>
           </div>
-
           <div class="absolute bottom-[15%] left-[15%] -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Cifrado de contraseñas
-            </div>
+            <div class="etiqueta-sm">Cifrado de contraseñas</div>
           </div>
-
           <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Firma electrónica
-            </div>
+            <div class="etiqueta-sm">Firma electrónica</div>
           </div>
-
           <div class="absolute top-[15%] left-[15%] -translate-x-1/2 pointer-events-auto z-30">
-            <div class="bg-white text-sm rounded-xl shadow flex items-center justify-center text-center px-4 py-2 min-w-[140px] h-[40px]">
-              Tokens Físicos
-            </div>
+            <div class="etiqueta-sm">Tokens Físicos</div>
           </div>
 
         </div>
       </div>
     </div>
+
+    <!-- Lista vertical en mobile -->
+    <div class="block sm:hidden mt-6 text-xs text-center space-y-2 px-4">
+      <div class="etiqueta">Cifrado de archivos</div>
+      <div class="etiqueta">Cifrado de redes</div>
+      <div class="etiqueta">Autenticación</div>
+      <div class="etiqueta">Gestión de certificados</div>
+      <div class="etiqueta">Cifrado de SPEI</div>
+      <div class="etiqueta">Cifrado de contraseñas</div>
+      <div class="etiqueta">Firma electrónica</div>
+      <div class="etiqueta">Tokens Físicos</div>
+    </div>
   </div>
 </section>
 
 
-<section class="max-w-5xl mx-auto px-6 py-20 flex flex-col lg:flex-row gap-12">
-  <!-- Título -->
-  <div class="lg:w-1/3 flex items-center justify-center">
-    <h2 class="text-3xl font-medium text-center text-black">
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col lg:flex-row gap-12">
+  <!-- Título a la izquierda (en desktop) -->
+  <div class="lg:w-1/3 w-full flex items-center justify-center">
+    <h2 class="text-2xl sm:text-3xl font-medium text-center text-black">
       Fortalece tu seguridad digital con nuestras soluciones avanzadas
     </h2>
   </div>
 
-  <!-- Columnas -->
-  <div class="lg:w-2/3 flex gap-6 items-stretch">
+  <!-- Columnas a la derecha (en desktop) -->
+  <div class="lg:w-2/3 w-full flex flex-col sm:flex-row gap-6">
     <!-- Columna 1 -->
-    <div class="flex flex-col gap-6 flex-1 justify-center">
+    <div class="flex flex-col gap-6 flex-1">
       {columna1.map((item, i) => (
-       <MotionFadeIn client:visible direction="up" delay={0.1}>
-          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+        <MotionFadeIn client:visible direction="up" delay={0.1}>
+          <div class="min-h-[120px] rounded-xl p-6 sm:p-8 text-center text-base sm:text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
             {item}
           </div>
         </MotionFadeIn>
@@ -282,7 +273,7 @@ const casillas = [
     <div class="flex flex-col gap-6 flex-1">
       {columna2.map((item, i) => (
         <MotionFadeIn client:visible direction="down" delay={0.1}>
-          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+          <div class="min-h-[120px] rounded-xl p-6 sm:p-8 text-center text-base sm:text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
             {item}
           </div>
         </MotionFadeIn>
@@ -293,7 +284,7 @@ const casillas = [
     <div class="flex flex-col gap-6 flex-1">
       {columna3.map((item, i) => (
         <MotionFadeIn client:visible direction="up" delay={0.1}>
-          <div class="min-h-[120px] rounded-xl p-8 text-center text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
+          <div class="min-h-[120px] rounded-xl p-6 sm:p-8 text-center text-base sm:text-lg font-normal text-black shadow-md border-2 border-[#800080] flex items-center justify-center">
             {item}
           </div>
         </MotionFadeIn>
@@ -301,7 +292,6 @@ const casillas = [
     </div>
   </div>
 </section>
-
 
 <section class="bg-white px-6 py-24 md:px-12">
   <div class="max-w-5xl mx-auto text-center mb-12">
