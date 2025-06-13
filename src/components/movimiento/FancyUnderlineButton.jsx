@@ -1,7 +1,5 @@
-import { useState } from "react";
-
-export default function AnimatedButton({
-textoBoton = "Ver más",
+export default function FancyUnderlineButton({
+  textoBoton = "Ver más",
   href = "#",
   colorTexto = "#800080",
 }) {
@@ -13,7 +11,7 @@ textoBoton = "Ver más",
     >
       <span className="relative z-10">{textoBoton}</span>
       <span
-        className="absolute bottom-0 left-1/2 w-0 h-[2px] transition-all duration-300 ease-out"
+        className="absolute bottom-0 left-1/2 w-0 h-[2px] transition-all duration-500 ease-out blur-sm"
         style={{
           backgroundColor: colorTexto,
           transform: "translateX(-50%)",
@@ -23,6 +21,7 @@ textoBoton = "Ver más",
       <style>{`
         a:hover span:nth-child(2) {
           width: 100%;
+          filter: blur(0);
         }
       `}</style>
     </a>

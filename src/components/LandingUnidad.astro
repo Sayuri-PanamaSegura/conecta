@@ -1,7 +1,7 @@
 ---
 import ScrollReveal from '../components/movimiento/ScrollReveal.jsx';
 import GrowCircle  from './movimiento/GrowCircle';
-import AnimatedButton from '../components/movimiento/AnimatedButton';
+import BotonFlotanteAnimado from './movimiento/BotonFlotanteAnimado';
 // Recibimos props flexibles
 const {
   imagenHero = "",
@@ -51,11 +51,11 @@ const {
   </div>
 )}
 
+<!-- Botón -->
+<section class="text-center my-12">
+  <BotonFlotanteAnimado texto={textoBoton} href="/contacto" color={colorFrase} client:load/>
 
-  <!-- Botón -->
- <AnimatedButton textoBoton={textoBoton} coloresBoton={colorFrase} href="/contacto" client:load />
-
-
+</section>
   <!-- Carrusel (si se manda como slot o prop) -->
   <slot name="carrusel" />
   {carrusel && (
@@ -88,29 +88,29 @@ const {
 
   <!-- Tarjetas con íconos y frases -->
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-    {tarjetas.map((item) => (
-      <div class="flex flex-col items-start text-left">
-       <GrowCircle client:visible>
-  <div
-    class="mb-4 w-20 h-20 rounded-full flex items-center justify-center border-2"
-    style={`background: linear-gradient(to bottom, #ffffff, #e5e7eb); border-color: ${colorFrase};`}
-  >
-    <img
-      src={item.imagen}
-      alt={item.titulo}
-      class="w-10 h-10 object-contain"
-    />
-  </div>
-</GrowCircle>
+  {tarjetas.map((item) => (
+    <div class="flex flex-col items-center text-center md:items-start md:text-left mx-auto">
+      <GrowCircle client:visible>
+        <div
+          class="mb-4 w-20 h-20 rounded-full flex items-center justify-center border-2"
+          style={`background: linear-gradient(to bottom, #ffffff, #e5e7eb); border-color: ${colorFrase};`}
+        >
+          <img
+            src={item.imagen}
+            alt={item.titulo}
+            class="w-10 h-10 object-contain"
+          />
+        </div>
+      </GrowCircle>
 
-        <p class="text-black font-light leading-relaxed text-lg whitespace-pre-line">
-          {item.frase.map((part) =>
-            part.bold
-              ? <span class="font-semibold">{part.text}</span>
-              : <span>{part.text}</span>
-          )}
-        </p>
-      </div>
-    ))}
-  </div>
+      <p class="text-black font-light leading-relaxed text-lg whitespace-pre-line">
+        {item.frase.map((part) =>
+          part.bold
+            ? <span class="font-semibold">{part.text}</span>
+            : <span>{part.text}</span>
+        )}
+      </p>
+    </div>
+  ))}
+</div>
 </section>

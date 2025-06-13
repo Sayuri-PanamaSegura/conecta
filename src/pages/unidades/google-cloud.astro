@@ -6,7 +6,7 @@ import SpreadReveal from '../../components/movimiento/SpreadReveal.jsx';
 import MotionFadeIn from "../../components/movimiento/MotionFadeIn";
 import GrowCircle from "../../components/movimiento/GrowCircle";
 import ScrollReveal from "../../components/movimiento/ScrollReveal";
-import AnimatedButton from "../../components/movimiento/AnimatedButton";
+import BotonFlotanteAnimado from "../../components/movimiento/BotonFlotanteAnimado";
 const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústala
 ---
 
@@ -23,8 +23,9 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
        <p class="text-lg font-light text-black leading-relaxed">
   En <span class="font-semibold">Conecta</span>, entendemos que la <span class="font-semibold">seguridad y la eficiencia son fundamentales </span> para cualquier organización que  confía en la nube. </br> </br>Ofrecemos una <span class="font-semibold">infraestructura robusta y optimizada</span>, </br>asegurando que cada proyecto cumpla con los  <span class="font-semibold"> más altos  estándares de protección de datos y rendimiento</span>.
 </p>
- <AnimatedButton textoBoton={("Hablemos")} coloresBoton="#4688F1" href="/contacto" client:load />
-
+<section class="text-center my-12">
+ <BotonFlotanteAnimado texto={("Hablemos")} color="#4688F1" href="/contacto" client:load />
+</section>
       </div>
 
       <!-- Imagen derecha -->

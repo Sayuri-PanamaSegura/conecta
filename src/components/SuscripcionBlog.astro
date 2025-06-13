@@ -34,7 +34,7 @@ const posts = feed.items.slice(0, 3); // SOLO 3 POSTS
                 class="w-full h-40 object-cover"
               />
               <div class="p-4 text-left">
-                <h3 class="text-base font-semibold text-gray-800 mb-1">{post.title}</h3>
+                <h3 class="text-base font-semibold text-black mb-1">{post.title}</h3>
                 <p class="text-sm text-gray-600 line-clamp-3">{post.contentSnippet}</p>
                 <time class="text-xs text-gray-400 mt-2 block">
                   {new Date(post.pubDate).toLocaleDateString('es-MX', {
@@ -61,7 +61,7 @@ const posts = feed.items.slice(0, 3); // SOLO 3 POSTS
         name="email" 
         required 
         placeholder="Tu correo electrónico" 
-        class="w-full sm:flex-1 p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 transition" 
+        class="w-full sm:flex-1 p-3 rounded-full border border-black focus:outline-none focus:ring-2 focus:[#800080] transition" 
       />
 
       <button 
