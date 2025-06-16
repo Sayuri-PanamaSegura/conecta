@@ -1,5 +1,16 @@
 import { useState } from "react";
 
+// Convierte color HEX a RGBA con opacidad
+function hexToRgba(hex, alpha) {
+  const cleanHex = hex.replace("#", "");
+  const bigint = parseInt(cleanHex, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 export default function BotonFlotanteAnimado({
   texto = "Agenda demo",
   href,
@@ -12,13 +23,13 @@ export default function BotonFlotanteAnimado({
   const commonClasses =
     "relative inline-block px-6 py-3 font-semibold rounded-xl mx-2 overflow-hidden transition-all duration-300 backdrop-blur-md";
 
+  const rgbaShadow = hexToRgba(color, hovered ? 0.3 : 0.4);
+
   const commonStyles = {
     color: hovered ? color : "white",
     border: `2px solid ${color}`,
     backgroundColor: hovered ? "rgba(255, 255, 255, 0.15)" : color,
-    boxShadow: hovered
-      ? `0 4px 30px rgba(128, 0, 128, 0.3)`
-      : "0 5px 15px rgba(128, 0, 128, 0.4)",
+    boxShadow: `0 5px 15px ${rgbaShadow}`,
   };
 
   const innerSpanStyles = {

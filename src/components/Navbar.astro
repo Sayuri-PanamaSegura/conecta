@@ -1,60 +1,56 @@
 ---
 import BotonFlotanteAnimado from "./movimiento/BotonFlotanteAnimado"
 ---
-<!-- NAVBAR -->
 <nav
   id="navbar"
   class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl bg-[#FAFAFA] backdrop-blur-md border border-white/30 rounded-full shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300"
 >
   <!-- Logo -->
   <a href="/" class="flex items-center space-x-2">
-    <img
-      id="navbar-logo"
-      src="/conecta.png"
-      alt="Logo Conecta"
-      class="h-8 w-auto transition-all duration-300"
-    />
+  <img
+  id="navbar-logo"
+  src="/conecta.png"
+  alt="Logo Conecta"
+  class="h-8 w-auto md:h-8 sm:h-6 transition-all duration-300"
+/>
+
   </a>
 
-  <!-- Nav Links -->
-<div class="hidden md:flex space-x-6 text-sm font-medium text-black relative">
-<a href="#nosotros" id="nosotros-btn" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">
-  NOSOTROS
-</a>
+  <!-- Links en escritorio -->
+  <div class="hidden md:flex space-x-6 text-sm font-medium text-black relative">
+    <a href="#nosotros" id="nosotros-btn" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">
+      NOSOTROS
+    </a>
 
-  <!-- Submenú -->
-  <div class="relative group">
- <button
-  id="soluciones-btn"
-  class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition flex items-center gap-1 focus:outline-none"
->
-  <span>SOLUCIONES</span>
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mt-[1px] transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-  </svg>
-</button>
+    <!-- Submenú -->
+    <div class="relative group">
+      <button
+        id="soluciones-btn"
+        class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition flex items-center gap-1 focus:outline-none"
+      >
+        <span>SOLUCIONES</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mt-[1px] transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
 
-  <div
-  class="absolute top-full left-0 mt-2 bg-[#FAFAFA] border border-gray-700 rounded-lg shadow-lg p-2 w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200 z-50"
->
-  <a href="/unidades/conecta-cripto" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">CONECTA CRIPTOGRAFÍA</a>
- <!-- Logo   <a href="/unidades/tesseract" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">TESSERACT</a> -->
-  <a href="/unidades/hermes" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">HERMES</a>
-  <a href="/unidades/google-cloud" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">GOOGLE CLOUD</a>
-</div>
+      <div class="absolute top-full left-0 mt-2 bg-[#FAFAFA] border border-gray-700 rounded-lg shadow-lg p-2 w-48 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200 z-50">
+        <a href="/unidades/conecta-cripto" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">CONECTA CRIPTOGRAFÍA</a>
+        <a href="/unidades/hermes" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">HERMES</a>
+        <a href="/unidades/google-cloud" class="block px-4 py-2 text-black hover:bg-black hover:text-white rounded transition">GOOGLE CLOUD</a>
+      </div>
+    </div>
 
+    <a href="/servicioalcliete" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">SOPORTE</a>
+    <a href="/blog" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">BLOG</a>
   </div>
 
-  <a href="/servicioalcliete" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">SOPORTE</a>
-  <a href="/blog" class="nav-link hover:font-semibold hover:underline hover:decoration-black hover:underline-offset-4 transition">BLOG</a>
-</div>
+  <!-- Botón contacto -->
+  <div class="scale-75">
+    <BotonFlotanteAnimado texto="CONTACTO" href="/contacto" color="black" client:load />
+  </div>
 
-
-<div class="scale-75">
-  <BotonFlotanteAnimado texto="CONTACTO" href="/contacto" color="black" client:load />
-</div>
-
-  <!-- Botón hamburguesa (solo móvil) -->
+  <!-- Botón hamburguesa -->
   <button
     id="hamburger-btn"
     class="text-black text-2xl p-1 hover:bg-purple-100 transition duration-300 z-50 md:hidden"
@@ -63,286 +59,161 @@ import BotonFlotanteAnimado from "./movimiento/BotonFlotanteAnimado"
   </button>
 </nav>
 
-<!-- OVERLAY (solo móvil) -->
-<div
-  id="overlay"
-  class="fixed inset-0 bg-[#f5f5f5] bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500 z-40 md:hidden"
-></div>
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-[#f5f5f5] bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500 z-40 md:hidden"></div>
 
-<!-- SIDEBAR (solo móvil) -->
-<div
-  id="sidebar" 
-  class="fixed top-0 right-0 h-full w-64 bg-black shadow-2xl translate-x-full opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-50 border-l border-purple-200 md:hidden"
->
-  <div class="bg-black py-20 px-6 p-6 space-y-4">
+<!-- Sidebar móvil -->
+<div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-black shadow-2xl translate-x-full opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-50 border-l border-purple-200 md:hidden">
+  <div class="bg-black py-20 px-6 space-y-4">
     <button id="close-sidebar" class="text-right w-full text-white text-2xl">&times;</button>
-  <a href="#nosotros" id="mobile-nosotros-trigger" class="block text-white hover:text-gray-300">NOSOTROS</a>
+    <a href="#nosotros" id="mobile-nosotros-trigger" class="block text-white hover:text-gray-300">NOSOTROS</a>
 
-   <!-- Soluciones (con submenú) -->
-<div class="text-white">
-<button
-  id="mobile-soluciones-trigger"
-  class="w-full text-left flex justify-between items-center py-2 hover:text-purple-600"
->
-  SOLUCIONES
-  <span id="mobile-arrow-icon">▼</span>
-</button>
+    <div class="text-white">
+      <button id="mobile-soluciones-toggle" class="flex items-center gap-2 w-full text-left text-white hover:text-purple-400">
+        <span>SOLUCIONES</span>
+        <svg xmlns="http://www.w3.org/2000/svg" id="mobile-arrow-icon" class="h-3 w-3 mt-[1px] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
 
-  <div
-    id="mobile-soluciones-submenu"
-    class="pl-4 mt-2 space-y-2 hidden"
-  >
-    <a href="/unidades/conecta-cripto" class="block text-white hover:text-purple-400">CONECTA CRIPTOGRAFÍA </a>
-    <a href="/unidades/tesseract" class="block text-white hover:text-purple-400"> TESSERACT </a>
-    <a href="/unidades/hermes" class="block text-white hover:text-purple-400">HERMES</a>
-    <a href="/unidades/google-cloud" class="block text-white hover:text-purple-400">GOOGLE CLOUD</a>
-  </div>
-</div>
+      <div id="mobile-soluciones-submenu" class="pl-4 mt-2 space-y-2 hidden">
+        <a href="/unidades/conecta-cripto" class="block text-white hover:text-purple-400">CONECTA CRIPTOGRAFÍA</a>
+        <a href="/unidades/hermes" class="block text-white hover:text-purple-400">HERMES</a>
+        <a href="/unidades/google-cloud" class="block text-white hover:text-purple-400">GOOGLE CLOUD</a>
+      </div>
+    </div>
 
-    <a href="/servicioalcliete" class="block text-white hover:text-purple-600">SOPORTE </a>
+    <a href="/servicioalcliete" class="block text-white hover:text-purple-600">SOPORTE</a>
     <a href="/blog" class="block text-white hover:text-black">BLOG</a>
-
   </div>
 </div>
 
-<!-- Compensación del navbar -->
+<!-- Spacer para evitar que tape contenido -->
 <div class="h-20"></div>
 
-<!-- SCRIPTS -->
+<!-- Scripts -->
 <script>
-  // Reducir tamaño del navbar en scroll
-  window.addEventListener("scroll", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
     const logo = document.getElementById("navbar-logo");
-
-if (window.scrollY > 50) {
-  navbar.classList.add("py-1", "bg-white/30", "backdrop-blur-md");
-  navbar.classList.remove("py-3", "bg-[#FAFAFA]");
-  logo.classList.add("h-6");
-  logo.classList.remove("h-8");
-} else {
-  navbar.classList.add("py-3", "bg-[#FAFAFA]");
-  navbar.classList.remove("py-1", "bg-white/30", "backdrop-blur-md");
-  logo.classList.add("h-8");
-  logo.classList.remove("h-6");
-}
-
-  });
-
-  // Scrollspy
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
-          current = "#" + section.getAttribute("id");
-        }
-      });
-
-    navLinks.forEach((link) => {
-  link.classList.remove("underline", "decoration-black", "underline-offset-4", "font-semibold");
-  if (link.getAttribute("href") === current) {
-    link.classList.add("underline", "decoration-black", "underline-offset-4", "font-semibold");
-  }
-});
-
-
-
-    });
-  });
-
-  // Sidebar y overlay
-  document.addEventListener("DOMContentLoaded", () => {
     const hamburgerBtn = document.getElementById("hamburger-btn");
     const sidebar = document.getElementById("sidebar");
     const closeSidebar = document.getElementById("close-sidebar");
     const overlay = document.getElementById("overlay");
-
-    function openSidebar() {
-      sidebar.classList.remove("translate-x-full", "opacity-0", "pointer-events-none");
-      sidebar.classList.add("translate-x-0", "opacity-100", "pointer-events-auto");
-
-      overlay.classList.remove("opacity-0", "pointer-events-none");
-      overlay.classList.add("opacity-100", "pointer-events-auto");
-
-      hamburgerBtn.textContent = "✕";
-    }
-
-    function closeSidebarFunc() {
-      sidebar.classList.remove("translate-x-0", "opacity-100", "pointer-events-auto");
-      sidebar.classList.add("translate-x-full", "opacity-0", "pointer-events-none");
-
-      overlay.classList.remove("opacity-100", "pointer-events-auto");
-      overlay.classList.add("opacity-0", "pointer-events-none");
-
-      hamburgerBtn.textContent = "☰";
-    }
-
-    hamburgerBtn.addEventListener("click", () => {
-      const isOpen = sidebar.classList.contains("translate-x-0");
-      isOpen ? closeSidebarFunc() : openSidebar();
-    });
-
-    closeSidebar.addEventListener("click", closeSidebarFunc);
-    overlay.addEventListener("click", closeSidebarFunc);
-
-    // Cerrar también si se da clic fuera del sidebar
-    document.addEventListener("click", (e) => {
-      const isClickInside =
-        sidebar.contains(e.target) || hamburgerBtn.contains(e.target);
-      if (!isClickInside && sidebar.classList.contains("translate-x-0")) {
-        closeSidebarFunc();
-      }
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
     const solucionesBtn = document.getElementById("soluciones-btn");
     const submenu = solucionesBtn?.parentElement?.querySelector("div");
+    const nosotrosBtn = document.getElementById("nosotros-btn");
+    const mobileNosotrosTrigger = document.getElementById("mobile-nosotros-trigger");
+    const mobileSolucionesToggle = document.getElementById("mobile-soluciones-toggle");
+    const mobileSolucionesSubmenu = document.getElementById("mobile-soluciones-submenu");
+    const mobileArrowIcon = document.getElementById("mobile-arrow-icon");
+
     let solucionesClickCount = 0;
 
+// Navbar scroll efecto
+const isMobile = window.innerWidth < 768;
+
+if (isMobile) {
+  // En móvil, siempre usar logo pequeño
+  logo.classList.add("h-4");
+  logo.classList.remove("h-6", "h-8");
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("py-1", "bg-white/30", "backdrop-blur-md");
+    navbar.classList.remove("py-3", "bg-[#FAFAFA]");
+    if (!isMobile) {
+      logo.classList.add("h-4");
+      logo.classList.remove("h-6");
+    }
+  } else {
+    navbar.classList.add("py-3", "bg-[#FAFAFA]");
+    navbar.classList.remove("py-1", "bg-white/30", "backdrop-blur-md");
+    if (!isMobile) {
+      logo.classList.add("h-6");
+      logo.classList.remove("h-4");
+    }
+  }
+});
+
+
+    // Submenú soluciones escritorio
     solucionesBtn?.addEventListener("click", (e) => {
       e.preventDefault();
-
       const onHome = window.location.pathname === "/" || window.location.pathname === "/index.html";
 
       if (!onHome) {
-        // Si estás en otra página, redirige al home con ancla
         window.location.href = "/#servicios";
         return;
       }
 
-      // Estás en el home
       solucionesClickCount++;
 
       if (solucionesClickCount === 1) {
-        // Primer clic: scroll a #servicios
         const servicios = document.getElementById("servicios");
-        if (servicios) {
-          servicios.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        if (servicios) servicios.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        // Segundo clic: muestra el submenú manualmente
-        if (submenu) {
-          submenu.classList.toggle("opacity-0");
-          submenu.classList.toggle("invisible");
-          submenu.classList.toggle("opacity-100");
-          submenu.classList.toggle("visible");
-        }
-        solucionesClickCount = 0; // Reinicia
-      }
-    });
-
-        const nosotrosBtn = document.getElementById("nosotros-btn");
-
-    nosotrosBtn?.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const onHome = window.location.pathname === "/" || window.location.pathname === "/index.html";
-
-      if (!onHome) {
-        // Redirige al home con ancla
-        window.location.href = "/#nosotros";
-        return;
-      }
-
-      // Ya estás en home: hace scroll suave
-      const seccionNosotros = document.getElementById("nosotros");
-      if (seccionNosotros) {
-        seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-
-  });
-</script>
-<script>
-  // Submenú de soluciones en móvil
-  document.addEventListener("DOMContentLoaded", () => {
-    const solucionesBtn = document.getElementById("mobile-soluciones-btn");
-    const submenu = document.getElementById("mobile-soluciones-submenu");
-    const arrowIcon = document.getElementById("arrow-icon");
-
-    solucionesBtn.addEventListener("click", () => {
-      const isHidden = submenu.classList.contains("hidden");
-
-      submenu.classList.toggle("hidden");
-      arrowIcon.textContent = isHidden ? "▲" : "▼";
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // FUNCIONES
-    function closeSidebarFunc() {
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      const hamburgerBtn = document.getElementById("hamburger-btn");
-
-      sidebar.classList.remove("translate-x-0", "opacity-100", "pointer-events-auto");
-      sidebar.classList.add("translate-x-full", "opacity-0", "pointer-events-none");
-
-      overlay.classList.remove("opacity-100", "pointer-events-auto");
-      overlay.classList.add("opacity-0", "pointer-events-none");
-
-      hamburgerBtn.textContent = "☰";
-    }
-
-    // BOTÓN SOLUCIONES MÓVIL
-    const solucionesTrigger = document.getElementById("mobile-soluciones-trigger");
-    const submenu = document.getElementById("mobile-soluciones-submenu");
-    const arrowIcon = document.getElementById("mobile-arrow-icon");
-
-    let solucionesClickCount = 0;
-
-    solucionesTrigger?.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const onHome = window.location.pathname === "/" || window.location.pathname === "/index.html";
-
-      if (!onHome) {
-        window.location.href = "/#servicios";
-        return;
-      }
-
-      solucionesClickCount++;
-
-      if (solucionesClickCount === 1) {
-        const seccionServicios = document.getElementById("servicios");
-        if (seccionServicios) {
-          seccionServicios.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-        closeSidebarFunc();
-      } else {
-        submenu.classList.toggle("hidden");
-        arrowIcon.textContent = submenu.classList.contains("hidden") ? "▼" : "▲";
+        submenu?.classList.toggle("opacity-0");
+        submenu?.classList.toggle("invisible");
+        submenu?.classList.toggle("opacity-100");
+        submenu?.classList.toggle("visible");
         solucionesClickCount = 0;
       }
     });
 
-    // BOTÓN NOSOTROS MÓVIL
-    const nosotrosTrigger = document.getElementById("mobile-nosotros-trigger");
-
-    nosotrosTrigger?.addEventListener("click", (e) => {
+    // Nosotres desktop
+    nosotrosBtn?.addEventListener("click", (e) => {
       e.preventDefault();
-
       const onHome = window.location.pathname === "/" || window.location.pathname === "/index.html";
-
       if (!onHome) {
         window.location.href = "/#nosotros";
         return;
       }
-
       const seccionNosotros = document.getElementById("nosotros");
-      if (seccionNosotros) {
-        seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
-        closeSidebarFunc();
+      if (seccionNosotros) seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Sidebar open/close
+    hamburgerBtn.addEventListener("click", () => {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      if (isOpen) {
+        sidebar.classList.replace("translate-x-0", "translate-x-full");
+        sidebar.classList.replace("opacity-100", "opacity-0");
+        sidebar.classList.replace("pointer-events-auto", "pointer-events-none");
+        overlay.classList.replace("opacity-100", "opacity-0");
+        overlay.classList.replace("pointer-events-auto", "pointer-events-none");
+        hamburgerBtn.textContent = "☰";
+      } else {
+        sidebar.classList.replace("translate-x-full", "translate-x-0");
+        sidebar.classList.replace("opacity-0", "opacity-100");
+        sidebar.classList.replace("pointer-events-none", "pointer-events-auto");
+        overlay.classList.replace("opacity-0", "opacity-100");
+        overlay.classList.replace("pointer-events-none", "pointer-events-auto");
+        hamburgerBtn.textContent = "✕";
       }
+    });
+
+    closeSidebar?.addEventListener("click", () => hamburgerBtn.click());
+    overlay?.addEventListener("click", () => hamburgerBtn.click());
+
+    // Submenú móvil
+    mobileSolucionesToggle?.addEventListener("click", () => {
+      mobileSolucionesSubmenu?.classList.toggle("hidden");
+      mobileArrowIcon?.classList.toggle("rotate-180");
+    });
+
+    // Nosotros móvil
+    mobileNosotrosTrigger?.addEventListener("click", (e) => {
+      e.preventDefault();
+      const onHome = window.location.pathname === "/" || window.location.pathname === "/index.html";
+      if (!onHome) {
+        window.location.href = "/#nosotros";
+        return;
+      }
+      const seccionNosotros = document.getElementById("nosotros");
+      if (seccionNosotros) seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
+      hamburgerBtn.click();
     });
   });
 </script>

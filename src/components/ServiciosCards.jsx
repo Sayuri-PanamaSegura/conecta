@@ -19,8 +19,8 @@ const servicios = [
   {
     nombre: "Google Cloud Partner",
     descripcion: "Asesoría experta, workspace, integración y seguridad en la nube.",
-    imagen: "/servicios/google.png",
-    logo: "/servicios/google.png",
+    imagen: "/servicios/google1.png",
+    logo: "/servicios/google1.png",
     enlace: "/unidades/google-cloud",
   },
 ];
@@ -37,20 +37,21 @@ export default function ServiciosCards() {
         Toca una tarjeta para ver más información
       </p>
 
-      <div className="grid md:grid-cols-3 gap-10 items-center">
+      <div className="grid md:grid-cols-4 gap-10 items-center">
         {/* Imagen grande a la izquierda (solo escritorio) */}
-        <div className="hidden md:flex justify-center items-center">
+        <div className="hidden md:flex justify-center items-center md:col-span-1">
           {activo !== null && (
             <img
               src={servicios[activo].logo}
               alt={`Logo de ${servicios[activo].nombre}`}
-              className="w-64 h-auto object-contain transition-all duration-500"
+             className="w-48 h-auto object-contain transition-all duration-500"
+
             />
           )}
         </div>
 
         {/* Tarjetas */}
-        <div className="md:col-span-2 flex flex-col space-y-4">
+        <div className="md:col-span-3 flex flex-col space-y-4">
           {servicios.map((servicio, i) => {
             const estaActivo = activo === i;
             const color = colores[i];
@@ -63,31 +64,29 @@ export default function ServiciosCards() {
                 onMouseEnter={() => setActivo(i)}
                 onMouseLeave={() => setActivo(null)}
                 className={`flex items-center p-6 rounded-lg transition group cursor-pointer ${
-                  estaActivo ? 'bg-purple-100 border-l-4' : 'bg-gray-100'
+                  estaActivo ? 'border-l-4' : 'bg-gray-100'
                 } group-active:scale-[0.98] group-active:shadow-sm`}
                 style={{
                   borderColor: estaActivo ? color : '#ccc',
+                  backgroundColor: estaActivo ? `${color}22` : '#f3f4f6',
                 }}
               >
                 <div
                   className="flex-1 border-l-4 pl-3 transition-all"
                   style={{
                     borderColor: estaActivo ? color : '#ccc',
-                    backgroundColor: estaActivo ? "#F3E8FF" : "transparent",
+                    backgroundColor: 'transparent',
                   }}
                 >
                   <h3
-                    className={`text-base font-semibold transition-colors duration-200 ${
-                      estaActivo ? 'text-[var(--color)]' : 'text-gray-700'
-                    }`}
-                    style={{ '--color': color }}
+                    className="text-base font-semibold transition-colors duration-200"
+                    style={{ color: estaActivo ? color : '#374151' }}
                   >
                     {servicio.nombre}
                   </h3>
                   <p
-                    className={`text-sm transition-colors duration-200 ${
-                      estaActivo ? 'text-black' : 'text-gray-500'
-                    }`}
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: estaActivo ? '#000' : '#6B7280' }}
                   >
                     {servicio.descripcion}
                   </p>
