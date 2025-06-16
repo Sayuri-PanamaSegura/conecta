@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, File, FilePlus, FileImage, FileLock, FileSearch  } from "lucide-react";
-
+import BotonFlotanteAnimado from "../components/movimiento/BotonFlotanteAnimado";
 ---
 <Layout ocultarSuscripcion={true}>
   <!-- tu contenido de contacto aquí -->
@@ -59,7 +59,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
           name="nombre"
           required
           placeholder="Ej. María"
-          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
         />
       </div>
       <div>
@@ -71,7 +71,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
           name="apellido"
           required
           placeholder="Ej. López"
-          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
         />
       </div>
     </div>
@@ -86,7 +86,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
         name="email"
         required
         placeholder="tucorreo@email.com"
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
       />
     </div>
 
@@ -99,7 +99,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
         type="tel"
         name="telefono"
         placeholder="Ej. +52 55 1234 5678"
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
       />
     </div>
         <!-- Empresa -->
@@ -111,7 +111,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
         type="text"
         name="empresa"
         placeholder="Nombre de la empresa"
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
       />
     </div>
 
@@ -123,7 +123,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
       <select
         name="solucion"
         required
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:black transition"
       >
         <option value="" disabled selected>Selecciona una opción</option>
         <option value="conecta-cripto">Conecta Cripto</option>
@@ -142,7 +142,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
   <select
     name="poliza"
     required
-    class="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+    class="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:black transition"
   >
     <option value="" disabled selected>Selecciona el estado de tu póliza</option>
     <option value="con-vigencia">Con vigencia</option>
@@ -160,7 +160,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
         name="nombre_problema"
         required
         placeholder="Ej. Error en la conexión"
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition"
       />
     </div>
 
@@ -174,7 +174,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
         rows="4"
         required
         placeholder="Describe detalladamente el problema..."
-        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 transition resize-none"
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:black transition resize-none"
       ></textarea>
     </div>
 
@@ -184,7 +184,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
   <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
     <FileImage class="w-5 h-5 text-purple-500" /> Compartir evidencia
   </label>
-  <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-purple-500 transition text-center text-gray-500 text-sm">
+  <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:black transition text-center text-gray-500 text-sm">
     <span class="mb-1">Haz clic para seleccionar un archivo</span>
     <span class="text-xs text-gray-400">(Imágenes o PDF)</span>
     <input type="file" name="evidencia_compartida" accept="image/*,application/pdf" class="hidden" />
@@ -196,7 +196,7 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
   <label class="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
     <FilePlus class="w-5 h-5 text-purple-500" /> Adjuntar evidencias
   </label>
-  <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-purple-500 transition text-center text-gray-500 text-sm">
+  <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:black transition text-center text-gray-500 text-sm">
     <span class="mb-1">Haz clic para seleccionar múltiples archivos</span>
     <span class="text-xs text-gray-400">(Máx. 10 MB - Imágenes o PDF)</span>
     <input type="file" name="evidencias_adicionales" accept="image/*,application/pdf" multiple class="hidden" />
@@ -204,13 +204,12 @@ import {  User, Mail, MessageSquare, Phone, Building2, CircleHelp, FileText, Fil
 </div>
 
     <!-- Botón -->
-    <button
-      type="submit"
-      class="relative inline-block px-6 py-3 font-semibold text-black group shadow-md rounded-full overflow-hidden"
-    >
-      <span class="absolute inset-0 w-full h-full bg-[#F0F0F0] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full z-0"></span>
-      <span class="relative z-10">Enviar Mensaje</span>
-    </button>
+   <BotonFlotanteAnimado 
+        texto="Enviar Mensaje" 
+        type="submit" 
+        color="#000000" 
+        client:load 
+      />
   </form>
 </section>
 </Layout>

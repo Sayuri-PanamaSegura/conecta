@@ -6,6 +6,8 @@ const parser = new Parser({
   }
 });
 
+import BotonFlotanteAnimado from './movimiento/BotonFlotanteAnimado';
+
 function extractImage(html) {
   const match = html?.match(/<img[^>]+src="([^">]+)"/);
   return match ? match[1] : null;
@@ -64,13 +66,12 @@ const posts = feed.items.slice(0, 3); // SOLO 3 POSTS
         class="w-full sm:flex-1 p-3 rounded-full border border-black focus:outline-none focus:ring-2 focus:[#800080] transition" 
       />
 
-      <button 
-        type="submit" 
-        class="relative overflow-hidden text-black font-semibold py-3 px-8 rounded-full bg-white group transition"
-      >
-        <span class="relative z-10">Súmate</span>
-        <span class="absolute inset-0 bg-gray-300 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-      </button>
+    <BotonFlotanteAnimado 
+    texto="Súmate" 
+    type="submit" 
+    color="black" 
+    client:load 
+  />
 
       <input type="hidden" name="_captcha" value="false" />
     </form>

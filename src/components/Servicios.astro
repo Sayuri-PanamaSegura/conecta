@@ -11,6 +11,7 @@ const logosempresas = [
 ];
 // src/pages/index.astro (o donde tengas tu sección de servicios)
 import ServiciosCards from "../components/ServiciosCards.jsx";
+const carouselTitle = " Partners que fortalecen nuestra visión";
 ---
 <section id="servicios" class="py-16 md:py-20 px-6 md:px-12 bg-white">
   <div class="max-w-4xl mx-auto">
@@ -45,15 +46,11 @@ import ServiciosCards from "../components/ServiciosCards.jsx";
   });
 </script>
 <!-- Título con fondo gris -->
-<div class=" bg-white w-full pt-6 pb-2">
+<div class="bg-white w-full pt-0 pb-2">
+ 
+  <LogoCarousel logos={logosempresas} title={carouselTitle} client:only="react" />
 
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-medium text-black">
-      Partners que fortalecen nuestra visión
-    </h2>
-  </div>
-  
-        <LogoCarousel logos={logosempresas}  client:only="react" />
+
 </div>
 
  

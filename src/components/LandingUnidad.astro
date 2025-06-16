@@ -69,9 +69,9 @@ const {
   <!-- Título de sección de tarjetas -->
 {tituloTarjetas && (
 
-  <div class="max-w-4xl mx-auto mb-12 mt-20">
-    <h2 class="text-3xl md:text-3xl font-medium text-black whitespace-pre-line">
-
+ <div class="max-w-4xl mx-auto mb-16">
+     <h2 class="text-2xl sm:text-2x md:text-3xl lg:text-4xl font-medium text-black text-center mb-4">
+   
       {Array.isArray(tituloTarjetas)
         ? tituloTarjetas.map(part =>
             part.bold
@@ -85,11 +85,11 @@ const {
 )}
 
 
+<!-- Contenedor de tarjetas -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
 
-  <!-- Tarjetas con íconos y frases -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
   {tarjetas.map((item) => (
-    <div class="flex flex-col items-center text-center md:items-start md:text-left mx-auto">
+    <div class="flex flex-col items-center text-center md:items-start md:text-left">
       <GrowCircle client:visible>
         <div
           class="mb-4 w-20 h-20 rounded-full flex items-center justify-center border-2"
@@ -112,5 +112,7 @@ const {
       </p>
     </div>
   ))}
+
 </div>
+
 </section>

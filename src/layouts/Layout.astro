@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import FormularioContacto from '../components/FormularioContacto.astro'
 import "../styles/global.css"
-
+const { formColor = "black", ocultarSuscripcion = false } = Astro.props;
 import SuscripcionBlog from '../components/SuscripcionBlog.astro'
 ---
 
@@ -22,11 +22,11 @@ import SuscripcionBlog from '../components/SuscripcionBlog.astro'
     <main class="min-h-screen">
       <slot />
     </main>
-    {!Astro.props.ocultarSuscripcion && (
- 
-     <FormularioContacto />
- <SuscripcionBlog />
-  </section>
+{!ocultarSuscripcion && (
+  <>
+    <FormularioContacto color={formColor} />
+    <SuscripcionBlog />
+  </>
 )}
 
 

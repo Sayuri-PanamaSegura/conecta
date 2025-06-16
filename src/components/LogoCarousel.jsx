@@ -14,7 +14,7 @@ export default function LogosSwiper({
   return (
     <div className="py-16">
       {/* Título */}
-      <div className="max-w-6xl mx-auto text-center mb-6">
+      <div className="max-w-6xl mx-auto text-center mb-4">
         <h2 className="text-lg font-medium text-black">{title}</h2>
       </div>
 
