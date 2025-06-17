@@ -36,13 +36,13 @@ export default function BotonFlotanteAnimado({
     backgroundColor: color,
     opacity: hovered ? 0 : 1,
     zIndex: 1,
-    borderRadius: "0.75rem",
+    borderRadius: "0.5rem",
   };
 
   const borderEffectStyles = {
     width: hovered ? "100%" : "0",
     transform: "translateX(-50%)",
-    border: hovered ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+    border: hovered ? "1px solid rgba(255, 255, 255, 0)" : "none",
     zIndex: 2,
   };
 
@@ -56,7 +56,7 @@ export default function BotonFlotanteAnimado({
         onMouseLeave={() => setHovered(false)}
       >
         <span className="absolute inset-0 transition-opacity duration-500 ease-in-out" style={innerSpanStyles}></span>
-        <span className="absolute top-0 left-1/2 h-full rounded-xl transition-all duration-500 ease-in-out" style={borderEffectStyles}></span>
+        <span className="absolute top-0 left-1/2 h-full rounded-xl"  style={borderEffectStyles} ></span>
         <span className="relative z-10">{texto}</span>
       </a>
     );
@@ -72,7 +72,7 @@ export default function BotonFlotanteAnimado({
       onMouseLeave={() => setHovered(false)}
     >
       <span className="absolute inset-0 transition-opacity duration-500 ease-in-out" style={innerSpanStyles}></span>
-      <span className="absolute top-0 left-1/2 h-full rounded-xl transition-all duration-500 ease-in-out" style={borderEffectStyles}></span>
+      <span className="absolute top-0 left-1/2 h-full rounded-xl"  style={borderEffectStyles}></span>
       <span className="relative z-10">{texto}</span>
     </button>
   );

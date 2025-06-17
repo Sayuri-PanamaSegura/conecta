@@ -2,10 +2,12 @@
 import ScrollReveal from '../components/movimiento/ScrollReveal.jsx';
 import GrowCircle  from './movimiento/GrowCircle';
 import BotonFlotanteAnimado from './movimiento/BotonFlotanteAnimado';
+import HeroCriptoScroll from './movimiento/HeroCriptoScroll';
 // Recibimos props flexibles
 const {
   imagenHero = "",
   fraseHero = [],
+  fraseHeroAnimada="",
   colorFrase = "#800080",
   textoBoton = "Agenda demo",
   colorBoton = "#800080",
@@ -17,7 +19,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-white py-24 px-6 md:px-12">
+<section class="bg-[#f5f5f5] pt-24 pb-12 px-6 md:px-12">
+
    <ScrollReveal client:visible>
   <!-- Flecha de regreso -->
   <div class="max-w-6xl mx-auto mb-6">
@@ -38,11 +41,18 @@ const {
 
   <!-- Frase principal con palabras destacadas -->
   <div class="max-w-4xl mx-auto text-center mb-10 text-5xl md:text-5xl font-light text-gray-900 leading-snug whitespace-pre-line">
-    {fraseHero.map((parte) =>
-      parte.bold
-        ? <span style={`color: ${colorFrase}`} class="font-semibold">{parte.text}</span>
-        : <span>{parte.text}</span>
-    )}
+     {fraseHero.map((parte) => (
+      <span class={parte.bold ? "font-bold" : ""}>
+        {parte.text}<br />
+      </span>
+    ))}
+  </h1>
+
+  {fraseHeroAnimada && (
+    <div class="mt-6">
+      <HeroCriptoScroll titulo={fraseHeroAnimada} client:visible />
+    </div>
+  )}
   </div>
   <!-- Frase secundaria opcional -->
 {fraseSecundaria && (
@@ -66,7 +76,12 @@ const {
     </div>
   )}
  </ScrollReveal>
-  <!-- Título de sección de tarjetas -->
+  
+
+</section>
+<section class="bg-white py-24 px-6 md:px-12">
+
+<!-- Título de sección de tarjetas -->
 {tituloTarjetas && (
 
  <div class="max-w-4xl mx-auto mb-16">
@@ -114,5 +129,4 @@ const {
   ))}
 
 </div>
-
 </section>

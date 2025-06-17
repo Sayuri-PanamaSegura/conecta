@@ -80,7 +80,7 @@ const basePosition = 100 - Math.min(1, percentAdjusted) * 100;
           ref={mobileLine1Ref}
           className={`scroll-color-phrase ${scrolled ? "scrolled" : ""}`}
         >
-          conecta protege
+          conecta, protege
         </span>
         <span
           ref={mobileLine2Ref}
@@ -95,7 +95,7 @@ const basePosition = 100 - Math.min(1, percentAdjusted) * 100;
         ref={desktopLineRef}
         className={`scroll-color-phrase desktop-line ${scrolled ? "scrolled" : ""}`}
       >
-        conecta protege y cumple
+        conecta, protege y cumple
       </span>
     )}
   </div>

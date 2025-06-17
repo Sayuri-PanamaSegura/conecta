@@ -9,20 +9,21 @@ export default function ScrollLine() {
   });
 
   // Transformar la altura del scroll
-  const rawHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const rawHeight = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
   // Agregar spring para animar más rápido
   const height = useSpring(rawHeight, {
-    stiffness: 400,  // más alto = más rápido
+    stiffness: 700,  // más alto = más rápido
     damping: 20,     // más bajo = menos rebote
   });
 
   return (
-    <div ref={ref} className="absolute top-0 left-13 w-0.5 h-135 bg-gray-200" style={{ zIndex: 0 }}>
-      <motion.div
-        style={{ height }}
-        className="w-full bg-[#2836EF] origin-top"
-      />
+    <div ref={ref} className="absolute top-0 left-12 w-0.5 h-80 bg-white" style={{ zIndex: 0 }}>
+     <motion.div
+  style={{ height: rawHeight }}  // en vez de `height`
+  className="w-full bg-[#2836EF] origin-top"
+/>
+
     </div>
   );
 }
