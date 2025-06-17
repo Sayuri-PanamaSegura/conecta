@@ -24,7 +24,7 @@ export default function HeroScrollWords() {
     return () => refs.current.forEach((el) => el && observer.unobserve(el));
   }, []);
 
-  const words = ["conecta", "protege", "cumple"];
+  const words = ["conecta", "protege y cumple"];
 
   return (
     <span className="inline-block space-x-2">

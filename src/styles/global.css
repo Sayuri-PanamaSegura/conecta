@@ -40,16 +40,7 @@ body {
   transform: translateY(0) !important;
 }
 
-.scroll-text span[data-word] {
-  font-weight: 800;
-  color: #800080;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
 
-.scroll-activated span[data-word] {
-  color: #c95454;
-}
 
 .etiqueta {
   @apply bg-white text-sm rounded-xl shadow-md flex items-center justify-center text-center px-4 py-2 min-w-[160px] max-w-[200px] z-30;
@@ -211,4 +202,56 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   padding: 0.4rem 0.75rem;
   display: inline-block;
+}
+.scroll-color-wrapper {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.scroll-color-phrase {
+  font-size: 2.8rem;
+  font-weight: 600;
+  background: linear-gradient(
+    100deg,
+    #000000 0%,
+    #000000 10%,
+    #800080 60%,
+    #800080 100%
+  );
+  background-size: 300% 100%; /* más grande para ocultar al inicio */
+  background-position: 100% 0; /* empieza desde la derecha completamente negro */
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: background-position 0.3s ease;
+}
+
+/* Desktop: mostrar solo una línea */
+.desktop-line {
+  display: inline;
+}
+
+/* Ocultar móvil por defecto */
+.mobile-lines {
+  display: none;
+}
+
+/* Móvil: forzar dos líneas separadas con delay */
+@media (max-width: 768px) {
+  .desktop-line {
+    display: none;
+  }
+
+  .mobile-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .scroll-color-phrase {
+    display: block;
+  }
 }

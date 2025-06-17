@@ -14,49 +14,91 @@ import Card from '../components/movimiento/Card';
     <div class="w-full">
       <!-- Fila 1 -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <Card delay={0.1} client:visible>
-          <p class="text-black font-light leading-relaxed">
-            <span class="font-semibold">Asegurar</span><br />
-            el cumplimiento normativo
-          </p>
-        </Card>
-
+      <Card delay={0.1} client:visible>
+  <div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/01_Asegurar.gif"
+      alt="Animación de seguridad"
+      class="w-20 h-20 object-contain"
+    />
+    <p class="text-black font-light leading-relaxed text-center">
+      <span class="font-semibold">Asegurar</span><br />
+      el cumplimiento normativo
+    </p>
+  </div>
+</Card>
         <Card delay={0.2} client:visible>
-          <p class="text-black font-light leading-relaxed">
+          <div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/02_integrar.gif"
+      alt="Animación de integrar"
+      class="w-20 h-20 object-contain"
+    />
+    <p class="text-black font-light leading-relaxed">
             <span class="font-semibold">Integrar</span><br />
             tu institución al sistema financiero mexicano
           </p>
+          </div>
         </Card>
 
         <Card delay={0.3} client:visible>
+       <div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/03_facilitar.gif"
+      alt="Animación de integrar"
+      class="w-20 h-20 object-contain"
+    />
           <p class="text-black font-light leading-relaxed">
             <span class="font-semibold">Facilitar</span><br />
             tu adopción de la nube
           </p>
+       </div>
         </Card>
       </div>
 
       <!-- Fila 2 -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
         <Card delay={0.4} client:visible>
+          <div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/04_Proteger.gif"
+      alt="Animación de integrar"
+      class="w-20 h-20 object-contain"
+    />
           <p class="text-black font-light leading-relaxed">
             <span class="font-semibold">Proteger</span><br />
             tu información sensible
           </p>
+          </div>
         </Card>
 
         <Card delay={0.5} client:visible>
+<div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/05_Optimizar.gif"
+      alt="Animación de integrar"
+      class="w-20 h-20 object-contain"
+    />
+
           <p class="text-black font-light leading-relaxed">
             <span class="font-semibold">Optimizar</span><br />
             tu operación tecnológica
           </p>
+</div>
         </Card>
 
         <Card delay={0.6} client:visible>
+         <div class="flex flex-col items-center justify-center gap-4">
+    <img
+      src="/gif/06_Asesoria.gif"
+      alt="Animación de integrar"
+      class="w-20 h-20 object-contain"
+    />
           <p class="text-black font-light leading-relaxed">
             <span class="font-semibold">Contarás</span><br />
             con asesoría experta durante todo el proceso
           </p>
+         </div>
         </Card>
       </div>
     </div>
