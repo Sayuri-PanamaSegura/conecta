@@ -172,7 +172,12 @@ window.addEventListener("scroll", () => {
         return;
       }
       const seccionNosotros = document.getElementById("nosotros");
-      if (seccionNosotros) seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
+   if (seccionNosotros) {
+  const offset = 80; // Ajusta según la altura de tu navbar
+  const top = seccionNosotros.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
     });
 
     // Sidebar open/close
@@ -213,7 +218,12 @@ window.addEventListener("scroll", () => {
         return;
       }
       const seccionNosotros = document.getElementById("nosotros");
-      if (seccionNosotros) seccionNosotros.scrollIntoView({ behavior: "smooth", block: "start" });
+     if (seccionNosotros) {
+  const offset = 80; // Ajusta según la altura de tu navbar
+  const top = seccionNosotros.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
       hamburgerBtn.click();
     });
   });
