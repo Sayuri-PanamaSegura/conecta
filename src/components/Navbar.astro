@@ -1,5 +1,6 @@
 ---
 import BotonFlotanteAnimado from "./movimiento/BotonFlotanteAnimado"
+
 ---
 <nav
   id="navbar"
@@ -90,7 +91,6 @@ import BotonFlotanteAnimado from "./movimiento/BotonFlotanteAnimado"
 </div>
 
 <!-- Spacer para evitar que tape contenido -->
-<div class="h-20 bg-[#FAFAFA]" ></div>
 
 <!-- Scripts -->
 <script>
@@ -218,11 +218,13 @@ window.addEventListener("scroll", () => {
         return;
       }
       const seccionNosotros = document.getElementById("nosotros");
-     if (seccionNosotros) {
-  const offset = 80; // Ajusta según la altura de tu navbar
+ if (seccionNosotros) {
+  const isMobile = window.innerWidth < 640; // o el breakpoint que uses para móvil
+  const offset = isMobile ? 40 : 80; // menos offset en móvil, más en desktop
   const top = seccionNosotros.getBoundingClientRect().top + window.pageYOffset - offset;
   window.scrollTo({ top, behavior: "smooth" });
 }
+
 
       hamburgerBtn.click();
     });
