@@ -2,17 +2,14 @@
 import ScrollReveal from '../components/movimiento/ScrollReveal.jsx';
 import GrowCircle  from './movimiento/GrowCircle';
 import BotonFlotanteAnimado from './movimiento/BotonFlotanteAnimado';
-import HeroCriptoScroll from './movimiento/HeroCriptoScroll';
+import HeroAnimatedGradient
+ from './movimiento/HeroAnimatedGradient';
 // Recibimos props flexibles
 const {
   imagenHero = "",
   fraseHero = [],
-  tipoAnimacion="",
-    HeroAnimado = null, // <- nuevo
-  fraseHeroAnimada="",
   colorFrase = "#800080",
   textoBoton = "Agenda demo",
-  colorBoton = "#800080",
   tarjetas = [],
   tituloTarjetas = "",
   carrusel = null,
@@ -20,9 +17,6 @@ const {
   unidad= "",
    fraseSecundaria = "", 
 } = Astro.props;
-
-import HeroTransferencia from "../components/movimiento/HeroTransferencia.jsx";
-
 
 ---
 
@@ -46,29 +40,20 @@ import HeroTransferencia from "../components/movimiento/HeroTransferencia.jsx";
       <img src={imagenHero} alt="Imagen principal" class="max-w-xs md:max-w-md" />
     </div>
   )}
+<div class="max-w-4xl mx-auto text-center mb-4 text-5xl md:text-5xl font-light text-black leading-snug whitespace-pre-line">
 
 
-{Astro.slots.heroAnimado ? (
-  <slot name="heroAnimado" />
-) : (
- <div class="max-w-4xl mx-auto text-center mb-4 text-5xl md:text-5xl font-light text-gray-900 leading-snug whitespace-pre-line">
 {fraseHero.map((parte, idx) => (
-      <div key={idx} class="inline-block mr-1">
-        {parte.animate ? (
-          tipoAnimacion === "transferencia" ? (
-            <HeroTransferencia titulo={parte.text} client:visible />
-          ) : tipoAnimacion === "cripto" ? (
-            <HeroCriptoScroll titulo={parte.text} client:visible />
-          ) : (
-            <span class={parte.bold ? "font-semibold" : ""}>{parte.text}</span>
-          )
-        ) : (
-          <span class={parte.bold ? "font-semibold" : ""}>{parte.text}</span>
-        )}
-      </div>
-    ))}
+  <div key={idx} class="inline-block mr-1">
+    {parte.animateGradient ? (
+      <HeroAnimatedGradient client:visible texto={parte.text} color={colorFrase} />
+    ) : (
+      <span class={parte.bold ? "font-semibold" : ""}>{parte.text}</span>
+    )}
   </div>
-)}
+))}</div>
+
+
 
   <!-- Frase secundaria opcional -->
 {fraseSecundaria && (

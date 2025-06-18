@@ -374,3 +374,20 @@ body {
     padding: 0 1rem;
   }
 }
+.animated-gradient-text {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  font-weight: bold;
+  display: inline-block;
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
