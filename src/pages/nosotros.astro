@@ -1,5 +1,6 @@
-
-
+---
+import SpreadReveal from "../components/movimiento/SpreadReveal"
+---
 <section id="nosotros" class="bg-white pt-12 pb-0 md:pt-12 md:pb-0 px-6 md:px-12">
 
   <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -24,30 +25,37 @@
 
   <!-- Métricas -->
   <!-- Métricas tipo tarjetas -->
+  
+
 <div class="max-w-5xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
   <!-- Experiencia -->
-  <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
+      <SpreadReveal client:visible delay={0}>
+        <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
     <p class="text-3xl md:text-4xl font-bold text-[#800080] mb-2">+14</p>
     <p class="text-base text-black">
       años de<br />experiencia
     </p>
   </div>
-
+</SpreadReveal>
+<SpreadReveal client:visible delay={0}>
 <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full justify-center">
   <p class="text-lg text-black">Thales Top</p>
   <p class="text-lg text-black">Data Protection<br />Partner</p>
 </div>
-
+</SpreadReveal>
   <!-- Proyectos -->
+   <SpreadReveal client:visible delay={0}>
   <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full">
     <p class="text-3xl md:text-4xl font-bold text-[#800080] mb-2">+200</p>
     <p class="text-base text-black">proyectos<br />exitosos</p>
   </div>
-
+  </SpreadReveal>
+<SpreadReveal client:visible delay={0}>
   <!-- Regiones -->
   <div class="bg-gray-100 rounded-xl p-6 shadow-md flex flex-col h-full justify-center">
     <p class="text-lg text-black ">México <br />EUA <br />
     LATAM</p>
   </div>
+  </SpreadReveal>
 </div>
 </section>

@@ -7,6 +7,8 @@ import HeroCriptoScroll from './movimiento/HeroCriptoScroll';
 const {
   imagenHero = "",
   fraseHero = [],
+  tipoAnimacion="",
+    HeroAnimado = null, // <- nuevo
   fraseHeroAnimada="",
   colorFrase = "#800080",
   textoBoton = "Agenda demo",
@@ -15,9 +17,15 @@ const {
   tituloTarjetas = "",
   carrusel = null,
   autoplay=true,
+  unidad= "",
    fraseSecundaria = "", 
 } = Astro.props;
+
+import HeroTransferencia from "../components/movimiento/HeroTransferencia.jsx";
+
+
 ---
+
 
 <section class="bg-[#f5f5f5] pt-24 pb-12 px-6 md:px-12">
 
@@ -39,25 +47,33 @@ const {
     </div>
   )}
 
-  <!-- Frase principal con palabras destacadas -->
-  <div class="max-w-4xl mx-auto text-center mb-10 text-5xl md:text-5xl font-light text-gray-900 leading-snug whitespace-pre-line">
-     {fraseHero.map((parte) => (
-      <span class={parte.bold ? "font-bold" : ""}>
-        {parte.text}<br />
-      </span>
-    ))}
-  </h1>
 
-  {fraseHeroAnimada && (
-    <div class="mt-6">
-      <HeroCriptoScroll titulo={fraseHeroAnimada} client:visible />
-    </div>
-  )}
+{Astro.slots.heroAnimado ? (
+  <slot name="heroAnimado" />
+) : (
+ <div class="max-w-4xl mx-auto text-center mb-4 text-5xl md:text-5xl font-light text-gray-900 leading-snug whitespace-pre-line">
+{fraseHero.map((parte, idx) => (
+      <div key={idx} class="inline-block mr-1">
+        {parte.animate ? (
+          tipoAnimacion === "transferencia" ? (
+            <HeroTransferencia titulo={parte.text} client:visible />
+          ) : tipoAnimacion === "cripto" ? (
+            <HeroCriptoScroll titulo={parte.text} client:visible />
+          ) : (
+            <span class={parte.bold ? "font-semibold" : ""}>{parte.text}</span>
+          )
+        ) : (
+          <span class={parte.bold ? "font-semibold" : ""}>{parte.text}</span>
+        )}
+      </div>
+    ))}
   </div>
+)}
+
   <!-- Frase secundaria opcional -->
 {fraseSecundaria && (
-  <div class="max-w-3xl mx-auto text-center mb-10 text-base md:text-lg text-black leading-relaxed">
-    {fraseSecundaria}
+  <div class="max-w-3xl mx-auto text-center mb-0 text-base md:text-lg text-black leading-relaxed">
+ {fraseSecundaria}
   </div>
 )}
 

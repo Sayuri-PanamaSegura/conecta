@@ -204,10 +204,7 @@ body {
   display: inline-block;
 }
 
-.scroll-color-wrapper {
-  text-align: center;
-  line-height: 1.2;
-}
+
 
 .scroll-color-phrase {
   font-size: 3.6rem;
@@ -277,16 +274,6 @@ body {
   pointer-events: none;
 }
 
-.glitch::before {
-  animation: glitch-top 1.5s infinite linear alternate-reverse;
-  color: #ff00ff;
-}
-
-.glitch::after {
-  animation: glitch-bottom 2s infinite linear alternate;
-  color: #00ffff;
-}
-
 @keyframes glitch-top {
   0% {
     clip: rect(0, 9999px, 0, 0);
@@ -323,5 +310,67 @@ body {
   }
   100% {
     transform: skew(-0.5deg);
+  }
+}
+.subrayado-animado {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  color: #800080;
+}
+
+.subrayado-animado::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #800080;
+  animation: lineaAvanza 1.2s ease-out forwards;
+}
+
+@keyframes lineaAvanza {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.scroll-color-wrapper {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* ya no centrado verticalmente */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: auto;         /* 🔄 quitar height: 100vh */
+  margin-bottom: 0.5rem; /* 🔧 pequeño espacio opcional con la siguiente frase */
+}
+
+.motion-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  white-space: pre-wrap; /* ✅ respeta espacios */
+}
+
+
+
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+  .scroll-color-wrapper {
+    font-size: 2rem;
+    padding: 0 1rem;
   }
 }

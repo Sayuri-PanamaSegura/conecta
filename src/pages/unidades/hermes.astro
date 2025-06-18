@@ -6,6 +6,7 @@ import MotionFadeInY from '../../components/movimiento/MotionFadeInY';
 import ScrollLine from '../../components/movimiento/ScrollLine';
 import AnimatedCircle from '../../components/movimiento/AnimatedCircle.jsx';
 import ScrollReveal from '../../components/movimiento/ScrollReveal';
+import HeroTransferencia from '../../components/movimiento/HeroTransferencia.jsx';
 
 
 const logosempresas = [
@@ -21,6 +22,7 @@ const carouselTitle = "Empresas que confían en nosotros";
 
 <Layout formColor="#2836EF">
    <LandingUnidad
+  tipoAnimacion="transferencia"
   imagenHero="/Hermes/hermes.png"
   colorFrase="#2836EF"
   textoBoton="Hablemos"
@@ -31,9 +33,11 @@ const carouselTitle = "Empresas que confían en nosotros";
     { text: "\nmás operaciones por SPEI® \nque con tarjetas. ", bold: true }
   ]}
   fraseHero={[
-    { text: "Más que SPEI®: ", bold: true },
-    { text: " somos \ntu" },
-    { text: " aliado tecnológico \ny estratégico", bold: true }
+  { text: "Más que SPEI®:", bold: true },
+  { text: "somos tu aliado" },
+  { text: " tecnológico", animate: "trasferencia" },
+
+
   ]}
   tarjetas={[
     {

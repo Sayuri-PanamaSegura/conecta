@@ -5,9 +5,11 @@ const randomChar = () => {
   return chars[Math.floor(Math.random() * chars.length)];
 };
 
-export default function HeroCriptoScroll({ titulo = "con la tecnología más robusta: HSMs" }) {
+export default function HeroCriptoScroll({ titulo = "protección de datos" }) {
   const [displayedText, setDisplayedText] = useState(titulo);
   const [isGlitching, setIsGlitching] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+
   const ref = useRef(null);
   const glitchingRef = useRef(false);
   const intervalRef = useRef(null);
@@ -20,11 +22,13 @@ export default function HeroCriptoScroll({ titulo = "con la tecnología más rob
         if (entry.isIntersecting && !glitchingRef.current) {
           glitchingRef.current = true;
           setIsGlitching(true);
-          setDisplayedText(titulo); // ✅ Mostrar normal al principio
+          setIsDone(false);
+          setDisplayedText(titulo);
 
-          // ⏳ Esperar un poco antes de empezar el efecto glitch
+          // 🔒 Bloquea el scroll
+          document.body.style.overflow = "hidden";
+
           timeoutRef.current = setTimeout(() => {
-            // 🔁 Fase 1: encriptar completamente por 1 segundo
             glitchIntervalRef.current = setInterval(() => {
               setDisplayedText(
                 titulo
@@ -34,11 +38,8 @@ export default function HeroCriptoScroll({ titulo = "con la tecnología más rob
               );
             }, 100);
 
-            // ⏳ Después de 1 segundo, pasar a revelar
             setTimeout(() => {
               clearInterval(glitchIntervalRef.current);
-
-              // 🔁 Fase 2: desencriptar letra por letra
               let i = 0;
               intervalRef.current = setInterval(() => {
                 setDisplayedText(
@@ -52,19 +53,30 @@ export default function HeroCriptoScroll({ titulo = "con la tecnología más rob
                 i++;
                 if (i > titulo.length) {
                   clearInterval(intervalRef.current);
+                  setIsDone(true);
+
+                  // ✅ Desbloquea el scroll después de 500ms más (opcional)
+                  setTimeout(() => {
+                    document.body.style.overflow = "";
+                  }, 500);
                 }
               }, 80);
-            }, 1000); // 1 segundo de glitch
-          }, 500); // medio segundo después de entrar
+            }, 1000);
+          }, 500);
         }
 
         if (!entry.isIntersecting && glitchingRef.current) {
           glitchingRef.current = false;
           setIsGlitching(false);
+          setIsDone(false);
+
           clearInterval(intervalRef.current);
           clearInterval(glitchIntervalRef.current);
           clearTimeout(timeoutRef.current);
-          setDisplayedText(titulo); // ← Volver a mostrar texto limpio
+          setDisplayedText(titulo);
+
+          // 🧹 Asegura que se desbloquee el scroll por si acaso
+          document.body.style.overflow = "";
         }
       },
       {
@@ -82,13 +94,19 @@ export default function HeroCriptoScroll({ titulo = "con la tecnología más rob
       clearInterval(intervalRef.current);
       clearInterval(glitchIntervalRef.current);
       clearTimeout(timeoutRef.current);
+
+      // 🧼 Limpieza final del scroll
+      document.body.style.overflow = "";
     };
   }, [titulo]);
 
   return (
     <h2
       ref={ref}
-      className={`text-2xl sm:text-3xl md:text-4xl font-bold text-[#800080] tracking-wide transition-all duration-300`}
+      data-text={titulo}
+      className={`text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-[#800080] transition-all duration-300 ${
+        isDone ? "glitch" : ""
+      }`}
     >
       {displayedText}
     </h2>
