@@ -11,32 +11,34 @@ const imagen = "/Google/Mask.png"; // Asegúrate que exista la imagen o ajústal
 ---
 
 <Layout  formColor="#4688F1">
-  <section class="bg-[#FAFAFA] pt-32 px-6 py-24 md:px-10">
-    <ScrollReveal client:visible>
-    <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+<section class="bg-[#FAFAFA] pt-44 px-6 py-24 md:px-10">
+  <ScrollReveal client:visible>
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 h-full">
 
       <!-- Texto izquierdo -->
-      <div class="md:w-1/2 text-left">
+      <div class="md:w-1/2 flex flex-col justify-center h-full text-left">
         <h2 class="text-3xl md:text-4xl font-semibold text-[color:var(--primary,_#4688F1)] leading-tight mb-6">
-  <span class="text-black">Conecta:</span> Seguridad y Eficiencia en la Nube
-</h2>
+          <span class="text-black">Conecta:</span> Seguridad y Eficiencia en la Nube
+        </h2>
 
-       <p class="text-lg font-light text-black leading-relaxed">
-  En <span class="font-semibold">Conecta</span>, entendemos que la <span class="font-semibold">seguridad y la eficiencia son fundamentales </span> para cualquier organización que  confía en la nube. </br> </br>Ofrecemos una <span class="font-semibold">infraestructura robusta y optimizada</span>, </br>asegurando que cada proyecto cumpla con los  <span class="font-semibold"> más altos  estándares de protección de datos y rendimiento</span>.
-</p>
-<section class="text-center my-12">
- <BotonFlotanteAnimado texto={("Hablemos")} color="#4688F1" href="/contacto" client:load />
-</section>
+        <p class="text-lg font-light text-black leading-relaxed">
+          En <span class="font-semibold">Conecta</span>, entendemos que la <span class="font-semibold">seguridad y la eficiencia son fundamentales </span> para cualquier organización que  confía en la nube. </br> </br>Ofrecemos una <span class="font-semibold">infraestructura robusta y optimizada</span>, </br>asegurando que cada proyecto cumpla con los  <span class="font-semibold"> más altos  estándares de protección de datos y rendimiento</span>.
+        </p>
+
+        <section class="text-center my-12">
+          <BotonFlotanteAnimado texto={("Hablemos")} color="#4688F1" href="/contacto" client:load />
+        </section>
       </div>
 
       <!-- Imagen derecha -->
-      <div class="md:w-1/2 flex justify-center">
+      <div class="md:w-1/2 flex justify-center items-center h-full">
         <img src={imagen} alt="Google Cloud infraestructura" class="max-w-md w-full object-contain" />
       </div>
 
     </div>
-    </ScrollReveal>
-  </section>
+  </ScrollReveal>
+</section>
+
 <section class="bg-white px-6 md:px-12 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8">
   <div class="max-w-4xl mx-auto mb-8">
     <h2 class="text-2xl sm:text-2x md:text-3xl lg:text-4xl font-medium text-black text-center mb-16">
