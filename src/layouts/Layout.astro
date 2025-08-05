@@ -7,14 +7,43 @@ const { formColor = "black", ocultarSuscripcion = false } = Astro.props;
 import SuscripcionBlog from '../components/SuscripcionBlog.astro'
 ---
 
+
 <html lang="es">
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon-black-bg.png" />
-    <title>Conecta</title>
-  </head>
+
+
+  <!--  Metadatos sociales actualizados -->
+  <meta name="description" content="Soluciones tecnológicas en cifrado, HSM, SPEI y nube para que tu empresa opere con seguridad, cumpla normativas y crezca en la era digital." />
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon-black-bg.png" />
+  <title>Conecta</title>
+
+  <!--  Metadatos sociales actualizados -->
+  <meta name="description" content="Soluciones tecnológicas en cifrado, HSM, SPEI y nube para que tu empresa opere con seguridad, cumpla normativas y crezca en la era digital." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Conecta" />
+  <meta property="og:description" content="Soluciones tecnológicas en cifrado, HSM, SPEI y nube para que tu empresa opere con seguridad, cumpla normativas y crezca en la era digital." />
+  <meta property="og:image" content="https://conecta.mx/webSite.png" />
+  <meta property="og:url" content="https://conecta.mx" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Conecta" />
+  <meta name="twitter:description" content="Soluciones tecnológicas en cifrado, HSM, SPEI y nube para que tu empresa opere con seguridad, cumpla normativas y crezca en la era digital." />
+  <meta name="twitter:image" content="https://conecta.mx/webSite.pgn" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76Q3E5220E');
+</script>
+
+</head>
 
 
   <body class="scroll-smooth scroll-pb-70">
@@ -22,14 +51,12 @@ import SuscripcionBlog from '../components/SuscripcionBlog.astro'
     <main class="min-h-screen">
       <slot />
     </main>
-{!ocultarSuscripcion && (
-  <>
-    <FormularioContacto color={formColor} />
-    <SuscripcionBlog />
-  </>
-)}
-
-
+    {!ocultarSuscripcion && (
+      <>
+        <FormularioContacto color={formColor} />
+        <SuscripcionBlog />
+      </>
+    )}
     <Footer />
   </body>
 </html>

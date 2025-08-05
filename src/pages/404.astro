@@ -1,5 +1,5 @@
---- 
-import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.jsx'; 
+---
+import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.jsx'; // Asegúrate que esté en esta ruta
 ---
 
 <html lang="es">
@@ -16,46 +16,45 @@ import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.
 
       .header {
         display: flex;
-        align-items: center; /* Centra el logo verticalmente */
-        padding: 2rem 2rem 0 2rem; /* Reduce el padding superior */
+        align-items: center;
+        padding: 1.5rem 2rem;
       }
 
       .header img {
-        height: 70px; /* Logo más grande */
+        height: 50px;
       }
 
       .container {
         display: flex;
-        flex-direction: column; /* Mantén todo centrado verticalmente */
+        flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1rem 2rem 0.5rem 2rem;
-        gap: 1rem; /* Espacio entre el GIF, las frases y el botón */
+        padding: 2rem;
+        gap: 1.5rem;
       }
 
       .container img.gif {
-        width: 1;
+        max-width: 100%;
+        width: 300px;
         height: auto;
-        margin-top: 0; /* Elimina márgenes innecesarios */
       }
 
       .phrase {
         font-size: 1.5rem;
         font-weight: 500;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
       }
 
       .error-code {
-        font-size: 8rem; /* Mucho más grande */
+        font-size: 5rem;
         font-weight: bold;
-        line-height: 1.1;
       }
 
       .home-button {
         display: inline-block;
         margin-top: 1rem;
         padding: 0.75rem 1.5rem;
-        background-color: black;
+        background-color: #800080;
         color: white;
         text-decoration: none;
         font-size: 1rem;
@@ -64,9 +63,10 @@ import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.
       }
 
       .home-button:hover {
-        background-color: #800080;
+        background-color: #5a005a;
       }
 
+      /* Gradient animation */
       @keyframes shimmer {
         0% {
           background-position: 200% 0;
@@ -85,29 +85,19 @@ import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.
         -webkit-text-fill-color: transparent;
         animation: shimmer 4s linear infinite alternate;
       }
-
-      @media (max-width: 640px) {
-        .error-code {
-          font-size: 4rem;
-        }
-
-        .header img {
-          height: 50px;
-        }
-      }
     </style>
   </head>
 
   <body>
     <!-- Logo arriba a la izquierda -->
     <header class="header">
-      <img src="/Symbol_Black.png" alt="Logo Conecta" />
+      <img src="/logo.svg" alt="Logo Conecta" />
     </header>
 
     <!-- Contenido central -->
     <main class="container">
       <!-- GIF -->
-      <img src="/404-Not-Found-Conecta.gif" alt="Fantasma" class="gif" />
+      <img src="/ghost.gif" alt="Fantasma" class="gif" />
 
       <!-- Mensaje -->
       <div class="phrase">¡Te encontraste con una página fantasma!</div>
@@ -116,11 +106,9 @@ import HeroAnimatedGradient from '../components/movimiento/HeroAnimatedGradient.
       <div class="error-code">
         <HeroAnimatedGradient texto="404" color="#800080" />
       </div>
-      
-      <div class="phrase">No te preocupes, regresa al Home con este botón</div>
 
       <!-- Botón al home -->
-      <a href="/" class="home-button">Back to Home</a>
+      <a href="/" class="home-button">Volver al Home</a>
     </main>
   </body>
 </html>
